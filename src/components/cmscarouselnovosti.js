@@ -1,0 +1,57 @@
+import { Link } from "gatsby"
+import React, { useState } from "react"
+import styled from "styled-components"
+import CMSnovostCard from "./cmsnovosticard"
+
+const NovostiWrap = styled.div`
+  ${
+    "" /* display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column; */
+  }
+  width: 100%;
+  height: auto;
+  ${"" /* padding-top: 86px;
+  padding-bottom: 86px; */}
+
+  @media only screen and (max-width: 60em) {
+    ${"" /* display: block;
+    padding: 0 0; */}
+  }
+`
+const Naslov = styled.div`
+  font-size: 32px;
+  width: 100%;
+  height: auto;
+  margin-left: 129px;
+  margin-bottom: 30px;
+
+  @media only screen and (max-width: 60em) {
+    ${"" /* display: block;
+    padding: 0 0; */}
+  }
+`
+
+const CMSnovostiCarousel = () => {
+  return (
+    <>
+      <Naslov>Novosti / Objavljeni natječaji</Naslov>
+      <div
+        style={{
+          display: "flex",
+          width: "80%",
+          justifyContent: "space-between",
+          margin: "0 auto 40px auto",
+        }}
+      >
+        <CMSnovostCard />
+        <CMSnovostCard />
+        <CMSnovostCard />
+        <CMSnovostCard />
+      </div>
+    </>
+  )
+}
+
+export default CMSnovostiCarousel
