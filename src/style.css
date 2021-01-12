@@ -367,22 +367,28 @@ a:focus {
 
 /* -----------FOOTER------------------ */
 
-.footerLogo {
+.BrainhubCarousel__arrows {
   position: relative;
-  margin-right: 12.5px;
-  z-index: 10;
+  padding: 21px;
+  border: none;
+  overflow: hidden;
+  outline: 0;
+  font-size: 0;
+  line-height: 0;
+  background-color: transparent !important;
+}
+.BrainhubCarousel__arrowRight {
+  position: relative;
+  top: 20px;
+  right: 30px;
+}
+.BrainhubCarousel__arrowLeft {
+  position: relative;
+  top: 20px;
+  left: 30px;
 }
 
-/* -------------CMS--------------- */
-.overlayGradient {
-  background: linear-gradient(180deg, #000000 0%, rgba(196, 196, 196, 0) 100%);
-  background-blend-mode: multiply;
-  transform: rotate(-180deg);
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
-}
+/* ------------------carousel--------------- */
 
 @media screen and (max-width: 960px) {
   .primary-nav {

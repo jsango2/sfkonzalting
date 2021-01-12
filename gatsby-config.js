@@ -19,6 +19,7 @@ module.exports = {
         name: `blog`,
       },
     },
+
     {
       resolve: "gatsby-source-graphql",
       options: {
@@ -57,6 +58,7 @@ module.exports = {
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
+          `gatsby-plugin-styled-components`,
         ],
       },
     },

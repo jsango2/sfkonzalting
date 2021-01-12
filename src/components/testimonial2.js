@@ -1,57 +1,39 @@
 import React from "react"
 import styled from "styled-components"
+
 import background from "../../content/assets/images/bckg.png"
 
-// import Quote from "../images/quote.svg"
-// import Background from "../images/radniciBG.jpg"
-import { StaticQuery, graphql } from "gatsby"
-import Carousel, { autoplayPlugin } from "@brainhubeu/react-carousel"
-import "@brainhubeu/react-carousel/lib/style.css"
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.css"
 
 const Wrap = styled.div`
-  ${"" /* display: flex; */}
-  ${"" /* align-items: center;
-  justify-content: center; */}
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 100%;
-  height: 444px;
-  ${"" /* z-index: 1; */}
-  ${"" /* @media only screen and (max-width: 48em) {
+  height: 480px;
+  z-index: 20;
+  @media only screen and (max-width: 48em) {
     height: 495px;
-  } */}
+  }
 `
-
+// const VisibleContent = styled.div`
+//   width: 100%;
+//   height: 100%;
+//   position: relative;
+// `
 const Overlay = styled.div`
   position: absolute;
+  width: 100%;
   height: 100%;
-  width: 100%;
-  background: linear-gradient(
-    104.94deg,
-    #ac84bc -2.06%,
-    #a684bc 0.62%,
-    #9382bc 4.8%,
-    #747fbd 9.93%,
-    #6c7ebd 11.03%,
-    #6c84c1 15.14%,
-    #6a94cc 22.13%,
-    #67aee0 31.08%,
-    #63c6f1 37.75%,
-    #95d2dc 55.17%,
-    #b7dece 72.23%,
-    #c3e3c8 81.94%,
-    #eba8c1 108.52%,
-    #bc9fba 114.7%,
-    #9799b5 120.31%,
-    #8095b2 124.69%,
-    #7794b1 127.27%
-  );
-  transform: rotate(180deg);
-  width: 100%;
-  opacity: 0.9;
+  background-color: #71a8bfe6;
+  z-index: 2;
+  //
 `
 
 const AutorTestimoniala = styled.div`
-  text-align: center;
+  textalign: center;
   font-size: 22px;
   font-weight: 300;
   line-height: 28.49px;
@@ -88,8 +70,6 @@ const ZanimanjeAutora = styled.div`
 `
 
 const Paragraf = styled.div`
-  position: relative;
-  z-index: 100;
   width: 668px;
   height: 110px;
   text-align: center;
@@ -112,29 +92,12 @@ const Paragraf = styled.div`
   }
 `
 
-const Testimonial = () => {
+const Testimonial2 = () => {
   return (
-    // <StaticQuery
-    //   query={graphql`
-    //     {
-    //       wpgraphql {
-    //         izjave_vise {
-    //           edges {
-    //             node {
-    //               izjave_korisnika {
-    //                 textIzjave
-    //                 zanimanjeAutoraIzjave
-    //               }
-    //               title
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `}
-
     <>
       <Wrap>
+        <Overlay />
+
         <div
           style={{
             position: "absolute",
@@ -143,21 +106,30 @@ const Testimonial = () => {
             backgroundImage: `url(${background})`,
             backgroundPosition: "center",
             backgroundSize: "cover ",
+            zIndex: "1",
           }}
         ></div>
-        <Overlay />
-        <Carousel autoPlay={5000} animationSpeed={1000} arrows infinite>
-          <div className="visibleContent">
-            <Paragraf>Neka izjava</Paragraf>
 
-            <AutorTestimoniala>Jure Šango</AutorTestimoniala>
-            <ZanimanjeAutora>Krojač</ZanimanjeAutora>
+        <Carousel
+          showArrows={true}
+          infiniteLoop={true}
+          showThumbs={false}
+          showStatus={false}
+          autoPlay={true}
+          interval={8100}
+          showIndicators={true}
+        >
+          <div className="visibleContent">
+            <Paragraf>ssssssssssssssssssssssssssss</Paragraf>
+
+            <AutorTestimoniala>Jure</AutorTestimoniala>
+            <ZanimanjeAutora>Nesto</ZanimanjeAutora>
           </div>
           <div className="visibleContent">
-            <Paragraf>Neka2 izjava</Paragraf>
+            <Paragraf>ssssssssssssssssssssssssssss</Paragraf>
 
-            <AutorTestimoniala>Jure Šango</AutorTestimoniala>
-            <ZanimanjeAutora>Krojač</ZanimanjeAutora>
+            <AutorTestimoniala>Jure</AutorTestimoniala>
+            <ZanimanjeAutora>Nesto</ZanimanjeAutora>
           </div>
         </Carousel>
       </Wrap>
@@ -165,4 +137,4 @@ const Testimonial = () => {
   )
 }
 
-export default Testimonial
+export default Testimonial2

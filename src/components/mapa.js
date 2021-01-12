@@ -163,7 +163,7 @@ const Mapa = () => {
               margin: "0 auto 29px auto",
             }}
           ></div>
-          <div style={{ fontSize: "32px", marginBottom: "54px" }}>
+          <div style={{ fontSize: "32px", marginBottom: "40px" }}>
             +385 91 5234 932
             <br /> sfkonzalting@gmail.com
           </div>

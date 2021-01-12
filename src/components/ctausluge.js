@@ -9,7 +9,7 @@ const UslugeWrap = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: auto;
+  height: 336px;
   padding-top: 86px;
   padding-bottom: 86px;
 
@@ -73,7 +73,7 @@ const CTAusluge = () => {
         konkurentnosti naših klijenata. SF Konzalting  - Vaš Partner u <br />
         pokretanju pozitivnih društvenih promjena
       </Text>
-      <Link to="/usluge" style={{ textDecoration: "none" }}>
+      <Link to="/uslugePage" style={{ textDecoration: "none" }}>
         <Button>USLUGE KOJE NUDIMO</Button>
       </Link>
     </UslugeWrap>

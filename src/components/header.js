@@ -81,17 +81,17 @@ const Header = () => {
             </Link>
           </div>
           <nav className={`primary-nav ${display}`}>
-            <Link to="/usuluge" className="LinkHeader ">
+            <Link to="/usluge" className="LinkHeader">
               USLUGE
             </Link>
 
-            <Link to="/usuluge" className="LinkHeader">
+            <Link to="/novosti" className="LinkHeader">
               NOVOSTI
             </Link>
-            <Link to="/usuluge" className="LinkHeader">
+            <Link to="/usluge" className="LinkHeader">
               PROJEKTI
             </Link>
-            <Link to="/usuluge" className="LinkHeader">
+            <Link to="/usluge" className="LinkHeader">
               O NAMA
             </Link>
           </nav>
