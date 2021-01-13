@@ -25,7 +25,7 @@ const WrapUp = styled.div`
 `
 const Lijevo = styled.div`
   ${"" /* margin: 0 auto; */}
-  width: 49%;
+  width: 48%;
   ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   background-color: white;
@@ -40,7 +40,7 @@ const Lijevo = styled.div`
 `
 const Desno = styled.div`
   ${"" /* margin: 0 auto; */}
-  width: 49%;
+  width: 48%;
   ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   background-color: white;
@@ -211,19 +211,6 @@ export const pageQuery = graphql`
     site {
       siteMetadata {
         title
-      }
-    }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
-      nodes {
-        excerpt
-        fields {
-          slug
-        }
-        frontmatter {
-          date(formatString: "MMMM DD, YYYY")
-          title
-          description
-        }
       }
     }
   }

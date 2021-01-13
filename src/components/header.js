@@ -88,7 +88,7 @@ const Header = () => {
             <Link to="/novosti" className="LinkHeader">
               NOVOSTI
             </Link>
-            <Link to="/usluge" className="LinkHeader">
+            <Link to="/projekti" className="LinkHeader">
               PROJEKTI
             </Link>
             <Link to="/onama" className="LinkHeader">
