@@ -115,7 +115,7 @@ const Footer = () => (
             }}
           >
             Copyright © 2021 SF konzalting. All rights reserved. Web development
-            by sutra.hr
+            by <strong>sutra.hr</strong>
           </div>
         </WrapFooterText>
       </div>

@@ -91,7 +91,7 @@ const Header = () => {
             <Link to="/usluge" className="LinkHeader">
               PROJEKTI
             </Link>
-            <Link to="/usluge" className="LinkHeader">
+            <Link to="/onama" className="LinkHeader">
               O NAMA
             </Link>
           </nav>

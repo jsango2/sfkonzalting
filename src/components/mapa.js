@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import React, { useState } from "react"
 import styled from "styled-components"
 import mapa from "../../content/assets/images/Karta.png"
+import MapboxFile from "./mapboxFile"
 
 const MapaWrap = styled.div`
   ${"" /* align-items: center;
@@ -121,7 +122,7 @@ const Button = styled.div`
 const Mapa = () => {
   return (
     <MapaWrap>
-      <div
+      {/* <div
         style={{
           position: "absolute",
           width: "100%",
@@ -131,7 +132,8 @@ const Mapa = () => {
           backgroundSize: "cover ",
           zIndex: "1",
         }}
-      />
+      /> */}
+      <MapboxFile />
       <DonjiDio>
         <KakoDoNas>
           <div style={{ fontSize: "32px", marginBottom: "29px" }}>

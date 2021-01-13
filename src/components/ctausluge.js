@@ -73,7 +73,7 @@ const CTAusluge = () => {
         konkurentnosti naših klijenata. SF Konzalting  - Vaš Partner u <br />
         pokretanju pozitivnih društvenih promjena
       </Text>
-      <Link to="/uslugePage" style={{ textDecoration: "none" }}>
+      <Link to="/usluge" style={{ textDecoration: "none" }}>
         <Button>USLUGE KOJE NUDIMO</Button>
       </Link>
     </UslugeWrap>

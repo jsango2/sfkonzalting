@@ -49,6 +49,7 @@ const Krug = styled.div`
   text-align: center;
   height: 190px;
   width: 190px;
+  min-width: 190px;
   color: white;
   font-size: 18px;
   line-height: 21.9px;

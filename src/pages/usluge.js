@@ -5,6 +5,7 @@ import timeline from "../../content/assets/images/uslugeTimeline.svg"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import UslugeText from "../components/uslugeText"
+import PhotoGrid from "../components/photogrid"
 
 const usluge = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
@@ -24,6 +25,7 @@ const usluge = ({ data, location }) => {
         }}
       ></div>
       <UslugeText />
+      <PhotoGrid />
     </Layout>
   )
 }
