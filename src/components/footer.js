@@ -64,7 +64,7 @@ const Footer = () => (
     <WrapIn>
       <div style={{ display: "flex" }}>
         <Link to="/">
-          <img className="footerLogo" src={logo} alt="LogoDom" width="100px" />
+          <img className="footerLogoM" src={logo} alt="LogoDom" width="100px" />
         </Link>
         <WrapFooterText>
           {" "}
