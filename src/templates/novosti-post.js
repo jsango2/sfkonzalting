@@ -7,6 +7,7 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import CMSponosniCard from "../components/cmsponosnicard"
+import CMSnovostiCarousel from "../components/cmscarouselnovosti"
 
 const Wrap = styled.div`
   margin: 0 auto;
@@ -180,63 +181,6 @@ const Objekt = ({ data }) => {
             sive mađarske krave, 1 junice limousin pasmine, 1 muško june
             Charloise pasmine koji se nabavljaju kao osnovno
           </div>
-          <div
-            style={{
-              width: "57px",
-              height: "1px",
-              backgroundColor: "black",
-              marginBottom: "30px",
-            }}
-          ></div>
-          <div
-            style={{
-              fontWeight: "700",
-              fontSize: "14px",
-              // width: "89%",
-              // marginLeft: "10px",
-              marginBottom: "30px",
-              lineHeight: "16.8px",
-            }}
-          >
-            KLIJENT: OPG Jadranka Gulam
-            <br />
-            Institucija koja je odobrila kredit: Hamag bicro
-            <br />
-            Odobreni iznosi: 141.250,00 kn
-          </div>
-          <BlueBox>
-            <div
-              style={{
-                fontWeight: "300",
-                fontSize: "20px",
-                // width: "89%",
-                // marginLeft: "10px",
-                marginBottom: "22px",
-                lineHeight: "24px",
-              }}
-            >
-              Uloga SF konzaltinga u projektu:
-            </div>
-            <div
-              style={{
-                fontWeight: "300",
-                fontSize: "14px",
-                // width: "89%",
-                // marginLeft: "10px",
-                // marginBottom: "22px",
-                lineHeight: "18px",
-              }}
-            >
-              Nabavka 21 sive mađarske krave, 1 junice limousin pasmine, 1 muško
-              june Charloise pasmine koji se nabavljaju kao osnovn. Nabavka 21
-              sive mađarske krave, 1 junice limousin pasmine, 1 muško june
-              Charloise pasmine koji se nabavljaju kao osnovn <br />
-              <br /> Nabavka 21 sive mađarske krave, 1 junice limousin pasmine,
-              1 muško june Charloise pasmine koji se nabavljaju kao
-              osnovnNabavka 21 sive mađarske krave, 1 junice limousin pasmine, 1
-              muško june Charloise pasmine koji se nabavljaju kao osnovn
-            </div>
-          </BlueBox>
         </Lijevo>
         <Desno>
           <div
@@ -257,18 +201,16 @@ const Objekt = ({ data }) => {
         </Desno>
       </Wrap>
       <WrapDoli>
-        <Naslov>Pogledajte i naše ostale projekte</Naslov>
+        {/* <Naslov>Pogledajte i naše ostale projekte</Naslov> */}
         <div
-          style={{
-            display: "flex",
-            width: "768px",
-            justifyContent: "space-between",
-            margin: "0 auto 40px auto",
-          }}
+        //   style={{
+        //     display: "flex",
+        //     width: "768px",
+        //     justifyContent: "space-between",
+        //     margin: "0 auto 40px auto",
+        //   }}
         >
-          <CMSponosniCard />
-          <CMSponosniCard />
-          <CMSponosniCard />
+          <CMSnovostiCarousel />
         </div>
       </WrapDoli>
     </Layout>

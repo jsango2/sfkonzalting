@@ -114,54 +114,70 @@ const Paragraf = styled.div`
 
 const Testimonial = () => {
   return (
-    // <StaticQuery
-    //   query={graphql`
-    //     {
-    //       wpgraphql {
-    //         izjave_vise {
-    //           edges {
-    //             node {
-    //               izjave_korisnika {
-    //                 textIzjave
-    //                 zanimanjeAutoraIzjave
-    //               }
-    //               title
-    //             }
-    //           }
-    //         }
-    //       }
-    //     }
-    //   `}
-
-    <>
-      <Wrap>
-        <div
-          style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            backgroundImage: `url(${background})`,
-            backgroundPosition: "center",
-            backgroundSize: "cover ",
-          }}
-        ></div>
-        <Overlay />
-        <Carousel autoPlay={5000} animationSpeed={1000} arrows infinite>
-          <div className="visibleContent">
-            <Paragraf>Neka izjava</Paragraf>
-
-            <AutorTestimoniala>Jure Šango</AutorTestimoniala>
-            <ZanimanjeAutora>Krojač</ZanimanjeAutora>
-          </div>
-          <div className="visibleContent">
-            <Paragraf>Neka2 izjava</Paragraf>
-
-            <AutorTestimoniala>Jure Šango</AutorTestimoniala>
-            <ZanimanjeAutora>Krojač</ZanimanjeAutora>
-          </div>
-        </Carousel>
-      </Wrap>
-    </>
+    <StaticQuery
+      query={graphql`
+        {
+          wpgraphql {
+            wp_izjave {
+              edges {
+                node {
+                  wp_gq_izjava {
+                    tekstIzjave
+                    zanimanjeAutoraIzjave
+                  }
+                  title
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <Wrap>
+          <div
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url(${background})`,
+              backgroundPosition: "center",
+              backgroundSize: "cover ",
+            }}
+          ></div>
+          {/* {console.log(data)} */}
+          <Overlay />
+          <Carousel
+            plugins={[
+              "infinite",
+              "arrows",
+              {
+                resolve: autoplayPlugin,
+                options: {
+                  interval: 5000,
+                },
+              },
+            ]}
+            animationSpeed={1000}
+            draggable={true}
+          >
+            {data.wpgraphql.wp_izjave.edges.map(testimonial => (
+              <div key={testimonial.node.title} className="visibleContent">
+                <Paragraf
+                  dangerouslySetInnerHTML={{
+                    __html: testimonial.node.wp_gq_izjava.tekstIzjave,
+                  }}
+                />
+                <AutorTestimoniala> {testimonial.node.title}</AutorTestimoniala>
+                <ZanimanjeAutora>
+                  {" "}
+                  {testimonial.node.wp_gq_izjava.zanimanjeAutoraIzjave}
+                </ZanimanjeAutora>
+              </div>
+            ))}
+          </Carousel>
+        </Wrap>
+      )}
+    ></StaticQuery>
   )
 }
 

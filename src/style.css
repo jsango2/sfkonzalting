@@ -378,6 +378,7 @@ a:focus {
   outline: 0;
   font-size: 0;
   line-height: 0;
+
   background-color: transparent !important;
 }
 .BrainhubCarousel__arrowRight {
@@ -390,7 +391,27 @@ a:focus {
   top: 20px;
   left: 30px;
 }
-
+/* .BrainhubCarousel {
+  width: 900px !important;
+} */
+.BrainhubCarousel__container {
+  margin: 0 auto !important;
+  width: 1120px !important;
+}
+.BrainhubCarousel__customArrows button {
+  position: relative;
+  top: -50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: grey;
+  font-size: 30px;
+  cursor: pointer;
+}
+.ArrowsIzdvojeno {
+  position: relative;
+  margin-top: 60px;
+}
 /* ------------------carousel--------------- */
 
 @media screen and (max-width: 960px) {

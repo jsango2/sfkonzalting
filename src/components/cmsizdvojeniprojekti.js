@@ -2,7 +2,15 @@ import { Link } from "gatsby"
 import React, { useState } from "react"
 import styled from "styled-components"
 import CMSizdvojeniCard from "./cmsizdvojenicard"
-import CMSnovostCard from "./cmsnovosticard"
+import { StaticQuery, graphql } from "gatsby"
+import Carousel, {
+  autoplayPlugin,
+  slidesToShowPlugin,
+  arrowsPlugin,
+} from "@brainhubeu/react-carousel"
+import "@brainhubeu/react-carousel/lib/style.css"
+import { IoIosArrowBack } from "react-icons/Io"
+import { IoIosArrowForward } from "react-icons/Io"
 
 const NovostiWrap = styled.div`
   ${
@@ -36,22 +44,93 @@ const Naslov = styled.div`
 
 const CMSizdvojeniProjekti = () => {
   return (
-    <>
-      <Naslov>Izdvojeni projekti</Naslov>
-      <div
-        style={{
-          display: "flex",
-          width: "80%",
-          justifyContent: "space-between",
-          margin: "0 auto 40px auto",
-        }}
-      >
-        <CMSizdvojeniCard />
-        <CMSizdvojeniCard />
-        <CMSizdvojeniCard />
-        <CMSizdvojeniCard />
-      </div>
-    </>
+    <StaticQuery
+      query={graphql`
+        {
+          wpgraphql {
+            wp_projekti {
+              edges {
+                node {
+                  id
+                  title
+                  date
+                  slug
+                  wp_gr_projekt {
+                    klijentiznosinstitucija
+                    ulogaSfKonzaltingaUProjektu
+                    uvodUProjekt
+                    istaknutaSlika {
+                      sourceUrl
+                    }
+                    sirokaFotografijaUPostu {
+                      sourceUrl
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      `}
+      render={data => (
+        <>
+          <Naslov>Izdvojeni projekti</Naslov>
+          <Carousel
+            plugins={[
+              "infinite",
+              // "arrows",
+              {
+                resolve: autoplayPlugin,
+                options: {
+                  interval: 5000,
+                },
+              },
+              {
+                resolve: slidesToShowPlugin,
+                options: {
+                  numberOfSlides: 4,
+                },
+              },
+              {
+                resolve: arrowsPlugin,
+                options: {
+                  arrowLeft: (
+                    <button className="ArrowsIzdvojeno">
+                      <IoIosArrowBack />
+                    </button>
+                  ),
+                  arrowRight: (
+                    <button className="ArrowsIzdvojeno">
+                      <IoIosArrowForward />
+                    </button>
+                  ),
+                  addArrowClickHandler: true,
+                },
+              },
+            ]}
+            // animationSpeed={1000}
+            draggable={true}
+          >
+            {data.wpgraphql.wp_projekti.edges.map(projekt => (
+              <CMSizdvojeniCard
+                key={projekt.node.id}
+                date={projekt.node.date}
+                slug={projekt.node.slug}
+                naslov={projekt.node.title}
+                uvodUprojekt={projekt.node.wp_gr_projekt.uvodUProjekt}
+                ulogaUprojektu={
+                  projekt.node.wp_gr_projekt.ulogaSfKonzaltingaUProjektu
+                }
+                fotoFront={projekt.node.wp_gr_projekt.istaknutaSlika.sourceUrl}
+                coverFoto={
+                  projekt.node.wp_gr_projekt.sirokaFotografijaUPostu.sourceUrl
+                }
+              />
+            ))}
+          </Carousel>
+        </>
+      )}
+    ></StaticQuery>
   )
 }
 

@@ -1,5 +1,5 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import cardphoto from "../../content/assets/images/cmscard.png"
 
@@ -32,25 +32,67 @@ const Naslov = styled.div`
   }
 `
 
-const CMSnovostCard = () => {
+const CMSnovostCard = props => {
+  const [datum, setDatum] = useState("-")
+  useEffect(() => {
+    let datumPosta = props.date
+    function formatDate(date) {
+      var d = new Date(date),
+        month = "" + (d.getMonth() + 1),
+        day = "" + d.getDate(),
+        year = d.getFullYear()
+
+      if (month.length < 2) month = "0" + month
+      if (day.length < 2) day = "0" + day
+
+      return [day, month, year].join(".")
+    }
+    setDatum(formatDate(datumPosta))
+  }, [props.date])
+
+  // console.log(noTime)
   return (
-    <CardWrap>
-      <div>
-        <img src={cardphoto} alt="image" width="245px" />
-      </div>
-      <div
-        style={{
-          fontSize: "14px",
-          lineHeight: "18px",
-          marginTop: "19px",
-          marginBottom: "10px",
-        }}
-      >
-        Zadarska županija je objavila Program kreditiranja kroz financijski
-        instrument Covid 19...
-      </div>
-      <div style={{ fontWeight: "700", fontSize: "14px" }}>Saznaj više ➞</div>
-    </CardWrap>
+    <Link to="">
+      <CardWrap>
+        <div
+          style={{
+            position: "relative",
+            width: "100%",
+            height: "200px",
+            backgroundImage: `url(${props.coverFoto})`,
+            top: "0",
+            backgroundPosition: "center",
+            backgroundSize: "cover ",
+            zIndex: "2",
+          }}
+        ></div>
+
+        <div
+          style={{
+            fontSize: "14px",
+            lineHeight: "18px",
+            marginTop: "19px",
+            marginBottom: "10px",
+          }}
+        >
+          {props.naslov}
+        </div>
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <div style={{ color: "#A0A0A0", fontSize: "12px" }}>{datum}</div>
+          <div
+            style={{ fontWeight: "700", fontSize: "14px", marginRight: "10px" }}
+          >
+            Saznaj više ➞
+          </div>
+        </div>
+      </CardWrap>
+    </Link>
   )
 }
 

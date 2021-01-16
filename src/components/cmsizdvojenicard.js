@@ -45,7 +45,8 @@ const Naslov = styled.div`
   width: 210px;
   height: auto;
   margin-top: 15px;
-
+  text-transform: uppercase;
+}
   @media only screen and (max-width: 60em) {
     ${"" /* display: block;
     padding: 0 0; */}
@@ -65,7 +66,7 @@ const WrapText = styled.div`
   }
 `
 
-const CMSizdvojeniCard = () => {
+const CMSizdvojeniCard = props => {
   return (
     <CardWrap>
       <div
@@ -85,11 +86,8 @@ const CMSizdvojeniCard = () => {
             Saznaj više ➞
           </div>
 
-          <Naslov>NASLOV PROJEKTA U TRI REDA NASLOV PROJEKTA U TRI REDA</Naslov>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
-            purus sit amet luctus venenatis, lectus magna
-          </Text>
+          <Naslov>{props.naslov}</Naslov>
+          <Text>{props.ulogaUprojektu}</Text>
         </WrapText>
       </div>
     </CardWrap>
