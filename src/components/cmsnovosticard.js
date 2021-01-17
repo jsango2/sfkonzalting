@@ -14,7 +14,26 @@ const CardWrap = styled.div`
   height: 316px;
   ${"" /* padding-top: 86px;
   padding-bottom: 86px; */}
-
+  animation: fade-in 1s ease-out both;
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  &:hover .coverPhoto {
+    transform: scale(1.02);
+  }
   @media only screen and (max-width: 60em) {
     ${"" /* display: block;
     padding: 0 0; */}
@@ -50,22 +69,31 @@ const CMSnovostCard = props => {
     setDatum(formatDate(datumPosta))
   }, [props.date])
 
-  // console.log(noTime)
   return (
-    <Link to="">
+    <Link style={{ textDecoration: "none" }} to={`/novosti/${props.slug}`}>
       <CardWrap>
         <div
           style={{
             position: "relative",
             width: "100%",
             height: "200px",
-            backgroundImage: `url(${props.coverFoto})`,
-            top: "0",
-            backgroundPosition: "center",
-            backgroundSize: "cover ",
-            zIndex: "2",
+            overflow: "hidden",
           }}
-        ></div>
+        >
+          <div
+            className="coverPhoto"
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              backgroundImage: `url(${props.coverFoto})`,
+              top: "0",
+              backgroundPosition: "center",
+              backgroundSize: "cover ",
+              zIndex: "2",
+            }}
+          ></div>
+        </div>
 
         <div
           style={{
@@ -73,6 +101,7 @@ const CMSnovostCard = props => {
             lineHeight: "18px",
             marginTop: "19px",
             marginBottom: "10px",
+            color: "black",
           }}
         >
           {props.naslov}
@@ -86,7 +115,12 @@ const CMSnovostCard = props => {
         >
           <div style={{ color: "#A0A0A0", fontSize: "12px" }}>{datum}</div>
           <div
-            style={{ fontWeight: "700", fontSize: "14px", marginRight: "10px" }}
+            style={{
+              fontWeight: "700",
+              fontSize: "14px",
+              marginRight: "10px",
+              color: "black",
+            }}
           >
             Saznaj više ➞
           </div>

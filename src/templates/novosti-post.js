@@ -126,29 +126,62 @@ const Naslov = styled.div`
     padding: 0 0; */}
   }
 `
+const Overlay = styled.div`
+  position: absolute;
+  z-index: 500;
+  opacity: 0.2;
+  height: 100%;
+  width: 100%;
+  ${"" /* max-width: 1280px; */}
+  background: linear-gradient(
+    114.13deg,
+    #ac84bc -0.34%,
+    #a684bc 2.01%,
+    #9382bc 5.66%,
+    #747fbd 10.15%,
+    #6c7ebd 11.12%,
+    #6c84c1 14.71%,
+    #6a94cc 20.82%,
+    #67aee0 28.65%,
+    #63c6f1 34.49%,
+    #95d2dc 49.73%,
+    #b7dece 64.66%,
+    #c3e3c8 73.15%,
+    #eba8c1 96.4%,
+    #bc9fba 101.81%,
+    #9799b5 106.72%,
+    #8095b2 110.55%,
+    #7794b1 112.81%
+  );
+  @media only screen and (max-width: 60em) {
+    ${"" /* display: block;
+    padding: 0 0; */}
+  }
+`
 
 const Objekt = ({ data }) => {
   // ------visibility lazy loading------------
-  console.log(data)
   // --------------------------------------
 
   return (
     <Layout>
       <SEO
-      // title={data.wpgraphql.post.title}
-      // description={data.wpgraphql.post.dodatniOpis.kratkiOpisFront}
+        title={data.wpgraphql.wp_novost.title}
+        description={data.wpgraphql.wp_novost.wp_gq_novost.tekstNovosti}
       />
       <div
         style={{
           position: "relative",
           width: "100%",
-          height: "350px",
-          backgroundImage: `url(${Cover})`,
+          height: "230px",
+          backgroundImage: `url(${data.wpgraphql.wp_novost.wp_gq_novost.istaknutaFotografija.sourceUrl})`,
           backgroundPosition: "center",
           backgroundSize: "cover ",
           zIndex: "1",
         }}
-      ></div>
+      >
+        <Overlay />
+      </div>
       <Wrap>
         <Lijevo>
           <div
@@ -161,8 +194,7 @@ const Objekt = ({ data }) => {
               lineHeight: "37.5px",
             }}
           >
-            Primjer naslova u nekoliko redova, maksimalan broj znakova je xyz
-            primjer naslova
+            {data.wpgraphql.wp_novost.title}
           </div>
           <div
             style={{
@@ -174,12 +206,7 @@ const Objekt = ({ data }) => {
               lineHeight: "18px",
             }}
           >
-            Nabavka 21 sive mađarske krave, 1 junice limousin pasmine, 1 muško
-            june Charloise pasmine koji se nabavljaju kao osnovno sredstvo
-            odnosno životinje za rasplod, te 4 ženska i 4 muška teleta križanaca
-            mesnih pasmina kao obrtno sredstvo za tov i za prodaju. Nabavka 21
-            sive mađarske krave, 1 junice limousin pasmine, 1 muško june
-            Charloise pasmine koji se nabavljaju kao osnovno
+            {data.wpgraphql.wp_novost.wp_gq_novost.tekstNovosti}
           </div>
         </Lijevo>
         <Desno>
@@ -189,7 +216,7 @@ const Objekt = ({ data }) => {
               width: "100%",
               height: "421px",
               marginBottom: "83px",
-              backgroundImage: `url(${Cover})`,
+              backgroundImage: `url(${data.wpgraphql.wp_novost.wp_gq_novost.sirokaFotografijaUPostu.sourceUrl})`,
               backgroundPosition: "center",
               backgroundSize: "cover ",
               zIndex: "1",
@@ -217,68 +244,24 @@ const Objekt = ({ data }) => {
   )
 }
 
-// export const query = graphql`
-//   query MyQuery($slug: ID!) {
-//     wpgraphql {
-//       post(id: $slug, idType: SLUG) {
-//         dodatniOpis {
-//           kratkiOpisFront
-//           foto1 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto2 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto3 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto4 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto5 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto6 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           kratkiOpisObjektaUNaslovuPosta
-//           kratkiOpisUPostu1
-//           kratkiOpisUPostu2
-//           kratkiOpisUPostu3
-//           lokacijaObjekta
-//           frontForografija {
-//             sourceUrl(size: LARGE)
-//           }
-//           naslovMiniPost1
-//           naslovMiniPost2
-//           naslovMiniPost3
-//         }
-//         title
-//       }
-//       posts {
-//         edges {
-//           node {
-//             id
-//             title
-//             dodatniOpis {
-//               kratkiOpisFront
-//               frontForografija {
-//                 sourceUrl(size: MEDIUM_LARGE)
-//               }
-//             }
-//             categories {
-//               edges {
-//                 node {
-//                   name
-//                 }
-//               }
-//             }
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query MyQuery2($slug: ID!) {
+    wpgraphql {
+      wp_novost(id: $slug, idType: SLUG) {
+        title
+        date
+        wp_gq_novost {
+          sirokaFotografijaUPostu {
+            sourceUrl
+          }
+          istaknutaFotografija {
+            sourceUrl
+          }
+          tekstNovosti
+        }
+      }
+    }
+  }
+`
 
 export default Objekt

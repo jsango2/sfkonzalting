@@ -647,3 +647,40 @@ a:focus {
   background-blend-mode: multiply;
   transform: rotate(-180deg);
 }
+
+.coverPhoto {
+  z-index: 150 !important;
+  filter: grayscale(100%);
+  transition: all 1.5s;
+}
+
+.coverPhoto:hover {
+  filter: none !important;
+}
+.textIzdvojeni {
+  transition: all 1.5s;
+}
+.paginationWrap {
+  color: black;
+  height: 100px;
+}
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style-type: none;
+  margin-bottom: 60px;
+}
+.page-item a {
+  color: #6d6d6d;
+  font-style: oblique;
+  margin: 5px;
+  text-decoration: none;
+}
+.active {
+  font-weight: 700;
+  color: #000000;
+  font-style: oblique;
+  margin: 5px;
+  text-decoration: none;
+}

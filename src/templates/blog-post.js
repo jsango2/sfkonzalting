@@ -128,21 +128,20 @@ const Naslov = styled.div`
 
 const Objekt = ({ data }) => {
   // ------visibility lazy loading------------
-  console.log(data)
   // --------------------------------------
 
   return (
     <Layout>
       <SEO
-      // title={data.wpgraphql.post.title}
-      // description={data.wpgraphql.post.dodatniOpis.kratkiOpisFront}
+        title={data.wpgraphql.wp_projekt.title}
+        description={data.wpgraphql.wp_projekt.wp_gr_projekt.uvodUProjekt}
       />
       <div
         style={{
           position: "relative",
           width: "100%",
           height: "350px",
-          backgroundImage: `url(${Cover})`,
+          backgroundImage: `url(${data.wpgraphql.wp_projekt.wp_gr_projekt.sirokaFotografijaUPostu.sourceUrl})`,
           backgroundPosition: "center",
           backgroundSize: "cover ",
           zIndex: "1",
@@ -160,8 +159,7 @@ const Objekt = ({ data }) => {
               lineHeight: "37.5px",
             }}
           >
-            Primjer naslova u nekoliko redova, maksimalan broj znakova je xyz
-            primjer naslova
+            {data.wpgraphql.wp_projekt.title}
           </div>
           <div
             style={{
@@ -173,12 +171,7 @@ const Objekt = ({ data }) => {
               lineHeight: "18px",
             }}
           >
-            Nabavka 21 sive mađarske krave, 1 junice limousin pasmine, 1 muško
-            june Charloise pasmine koji se nabavljaju kao osnovno sredstvo
-            odnosno životinje za rasplod, te 4 ženska i 4 muška teleta križanaca
-            mesnih pasmina kao obrtno sredstvo za tov i za prodaju. Nabavka 21
-            sive mađarske krave, 1 junice limousin pasmine, 1 muško june
-            Charloise pasmine koji se nabavljaju kao osnovno
+            {data.wpgraphql.wp_projekt.wp_gr_projekt.uvodUProjekt}
           </div>
           <div
             style={{
@@ -197,13 +190,11 @@ const Objekt = ({ data }) => {
               marginBottom: "30px",
               lineHeight: "16.8px",
             }}
-          >
-            KLIJENT: OPG Jadranka Gulam
-            <br />
-            Institucija koja je odobrila kredit: Hamag bicro
-            <br />
-            Odobreni iznosi: 141.250,00 kn
-          </div>
+            dangerouslySetInnerHTML={{
+              __html:
+                data.wpgraphql.wp_projekt.wp_gr_projekt.klijentiznosinstitucija,
+            }}
+          ></div>
           <BlueBox>
             <div
               style={{
@@ -227,14 +218,10 @@ const Objekt = ({ data }) => {
                 lineHeight: "18px",
               }}
             >
-              Nabavka 21 sive mađarske krave, 1 junice limousin pasmine, 1 muško
-              june Charloise pasmine koji se nabavljaju kao osnovn. Nabavka 21
-              sive mađarske krave, 1 junice limousin pasmine, 1 muško june
-              Charloise pasmine koji se nabavljaju kao osnovn <br />
-              <br /> Nabavka 21 sive mađarske krave, 1 junice limousin pasmine,
-              1 muško june Charloise pasmine koji se nabavljaju kao
-              osnovnNabavka 21 sive mađarske krave, 1 junice limousin pasmine, 1
-              muško june Charloise pasmine koji se nabavljaju kao osnovn
+              {
+                data.wpgraphql.wp_projekt.wp_gr_projekt
+                  .ulogaSfKonzaltingaUProjektu
+              }
             </div>
           </BlueBox>
         </Lijevo>
@@ -245,7 +232,7 @@ const Objekt = ({ data }) => {
               width: "100%",
               height: "421px",
               marginBottom: "83px",
-              backgroundImage: `url(${Cover})`,
+              backgroundImage: `url(${data.wpgraphql.wp_projekt.wp_gr_projekt.istaknutaSlika.sourceUrl})`,
               backgroundPosition: "center",
               backgroundSize: "cover ",
               zIndex: "1",
@@ -275,68 +262,26 @@ const Objekt = ({ data }) => {
   )
 }
 
-// export const query = graphql`
-//   query MyQuery($slug: ID!) {
-//     wpgraphql {
-//       post(id: $slug, idType: SLUG) {
-//         dodatniOpis {
-//           kratkiOpisFront
-//           foto1 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto2 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto3 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto4 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto5 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           foto6 {
-//             sourceUrl(size: MEDIUM_LARGE)
-//           }
-//           kratkiOpisObjektaUNaslovuPosta
-//           kratkiOpisUPostu1
-//           kratkiOpisUPostu2
-//           kratkiOpisUPostu3
-//           lokacijaObjekta
-//           frontForografija {
-//             sourceUrl(size: LARGE)
-//           }
-//           naslovMiniPost1
-//           naslovMiniPost2
-//           naslovMiniPost3
-//         }
-//         title
-//       }
-//       posts {
-//         edges {
-//           node {
-//             id
-//             title
-//             dodatniOpis {
-//               kratkiOpisFront
-//               frontForografija {
-//                 sourceUrl(size: MEDIUM_LARGE)
-//               }
-//             }
-//             categories {
-//               edges {
-//                 node {
-//                   name
-//                 }
-//               }
-//             }
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query MyQuery($slug: ID!) {
+    wpgraphql {
+      wp_projekt(id: $slug, idType: SLUG) {
+        title
+        date
+        wp_gr_projekt {
+          klijentiznosinstitucija
+          ulogaSfKonzaltingaUProjektu
+          uvodUProjekt
+          istaknutaSlika {
+            sourceUrl
+          }
+          sirokaFotografijaUPostu {
+            sourceUrl
+          }
+        }
+      }
+    }
+  }
+`
 
 export default Objekt
