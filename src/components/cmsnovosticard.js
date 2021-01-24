@@ -10,11 +10,15 @@ const CardWrap = styled.div`
   justify-content: center;
   flex-direction: column; */
   }
+  max-width: 280px;
   width: 245px;
+  min-width: 230px;
   height: 316px;
-  ${"" /* padding-top: 86px;
-  padding-bottom: 86px; */}
+  margin-left: 8px;
+  margin-right: 8px;
   animation: fade-in 1s ease-out both;
+  ${"" /* margin-left: 10px;
+  margin-right: 10px; */}
   @-webkit-keyframes fade-in {
     0% {
       opacity: 0;
@@ -31,23 +35,12 @@ const CardWrap = styled.div`
       opacity: 1;
     }
   }
-  &:hover .coverPhoto {
-    transform: scale(1.02);
+  &:hover .coverPhoto2 {
+    transform: scale(1.03);
   }
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
-  }
-`
-const Naslov = styled.div`
-  font-size: 32px;
-  width: 100%;
-  height: auto;
-  margin-left: 129px;
-
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @media only screen and (max-width: 633px) {
+    max-width: 100%;
+    width: 100%;
   }
 `
 
@@ -71,7 +64,7 @@ const CMSnovostCard = props => {
 
   return (
     <Link style={{ textDecoration: "none" }} to={`/novosti/${props.slug}`}>
-      <CardWrap>
+      <CardWrap className="coverPhoto">
         <div
           style={{
             position: "relative",
@@ -81,7 +74,7 @@ const CMSnovostCard = props => {
           }}
         >
           <div
-            className="coverPhoto"
+            className="coverPhoto2"
             style={{
               position: "relative",
               width: "100%",
@@ -99,7 +92,7 @@ const CMSnovostCard = props => {
           style={{
             fontSize: "14px",
             lineHeight: "18px",
-            marginTop: "19px",
+            marginTop: "14px",
             marginBottom: "10px",
             color: "black",
           }}
@@ -115,6 +108,7 @@ const CMSnovostCard = props => {
         >
           <div style={{ color: "#A0A0A0", fontSize: "12px" }}>{datum}</div>
           <div
+            // className="saznajVise"
             style={{
               fontWeight: "700",
               fontSize: "14px",

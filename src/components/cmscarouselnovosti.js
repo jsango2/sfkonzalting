@@ -1,56 +1,137 @@
-import { Link } from "gatsby"
 import { StaticQuery, graphql } from "gatsby"
-import { IoIosArrowBack } from "react-icons/Io"
-import { IoIosArrowForward } from "react-icons/Io"
-import Left from "../../content/assets/images/arrow left.svg"
 
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import CMSnovostCard from "./cmsnovosticard"
-import Carousel, {
-  autoplayPlugin,
-  slidesToShowPlugin,
-  arrowsPlugin,
-} from "@brainhubeu/react-carousel"
-import "@brainhubeu/react-carousel/lib/style.css"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
-const NovostiWrap = styled.div`
-  ${
-    "" /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  }
-  width: 100%;
-  height: auto;
-  ${"" /* padding-top: 86px;
-  padding-bottom: 86px; */}
-
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
-  }
-`
 const Naslov = styled.div`
   font-size: 32px;
-  width: 100%;
+  display: inline-block;
+  font-weight: 300;
+  ${"" /* width: 100%; */}
   height: auto;
-  margin-left: 129px;
+  padding-left: 129px;
   margin-bottom: 30px;
 
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @media only screen and (max-width: 570px) {
+    font-size: 26px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto 30px auto;
+    text-align: center;
   }
 `
+const Wrap = styled.div`
+  width: 1230px;
+  min-width: 330px;
+  margin: 0 auto;
+  @media only screen and (max-width: 1100px) {
+    width: 900px;
+  }
+  @media only screen and (max-width: 780px) {
+    width: 620px;
+  }
 
+  @media only screen and (max-width: 570px) {
+    width: 100%;
+  }
+`
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props
+  return (
+    <IoIosArrowForward
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "grey",
+        zIndex: "150",
+        top: "35%",
+      }}
+      onClick={onClick}
+    />
+  )
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props
+  return (
+    <IoIosArrowBack
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "grey",
+        zIndex: "150",
+        top: "35%",
+      }}
+      onClick={onClick}
+    />
+  )
+}
 const CMSnovostiCarousel = () => {
+  const settings = {
+    lazyLoad: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    className: "novostiSlider",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          lazyLoad: true,
+          arrows: true,
+          speed: 500,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          lazyLoad: true,
+          arrows: true,
+          speed: 500,
+        },
+      },
+      {
+        breakpoint: 633,
+        settings: {
+          className: "center",
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          lazyLoad: true,
+          arrows: false,
+          speed: 500,
+        },
+      },
+    ],
+  }
+
   return (
     <StaticQuery
       query={graphql`
         {
           wpgraphql {
-            wp_novosti {
+            wp_novosti(
+              last: 12
+              where: { orderby: { field: DATE, order: DESC } }
+            ) {
               edges {
                 node {
                   id
@@ -60,7 +141,7 @@ const CMSnovostiCarousel = () => {
                   wp_gq_novost {
                     tekstNovosti
                     istaknutaFotografija {
-                      sourceUrl(size: MEDIUM_LARGE)
+                      sourceUrl(size: THUMBNAIL)
                     }
                     sirokaFotografijaUPostu {
                       sourceUrl(size: LARGE)
@@ -75,66 +156,25 @@ const CMSnovostiCarousel = () => {
       render={data => (
         <>
           <Naslov>Novosti / Objavljeni natječaji</Naslov>
-          {/* <div
-            style={{
-              display: "flex",
-              width: "80%",
-              justifyContent: "space-between",
-              margin: "0 auto 40px auto",
-            }}
-          > */}
-          <Carousel
-            plugins={[
-              "infinite",
-              // "arrows",
-              {
-                resolve: autoplayPlugin,
-                options: {
-                  interval: 5000,
-                },
-              },
-              {
-                resolve: slidesToShowPlugin,
-                options: {
-                  numberOfSlides: 4,
-                },
-              },
-              {
-                resolve: arrowsPlugin,
-                options: {
-                  arrowLeft: (
-                    <button>
-                      <IoIosArrowBack />
-                    </button>
-                  ),
-                  arrowRight: (
-                    <button>
-                      <IoIosArrowForward />
-                    </button>
-                  ),
-                  addArrowClickHandler: true,
-                },
-              },
-            ]}
-            // animationSpeed={1000}
-            draggable={true}
-          >
-            {data.wpgraphql.wp_novosti.edges.map(novost => (
-              <CMSnovostCard
-                key={novost.node.id}
-                date={novost.node.date}
-                slug={novost.node.slug}
-                naslov={novost.node.title}
-                tekst={novost.node.wp_gq_novost.tekstNovosti}
-                fotoFront={
-                  novost.node.wp_gq_novost.istaknutaFotografija.sourceUrl
-                }
-                coverFoto={
-                  novost.node.wp_gq_novost.sirokaFotografijaUPostu.sourceUrl
-                }
-              />
-            ))}
-          </Carousel>
+          <Wrap>
+            <Slider {...settings}>
+              {data.wpgraphql.wp_novosti.edges.map(novost => (
+                <CMSnovostCard
+                  key={novost.node.id}
+                  date={novost.node.date}
+                  slug={novost.node.slug}
+                  naslov={novost.node.title}
+                  tekst={novost.node.wp_gq_novost.tekstNovosti}
+                  fotoFront={
+                    novost.node.wp_gq_novost.istaknutaFotografija.sourceUrl
+                  }
+                  coverFoto={
+                    novost.node.wp_gq_novost.sirokaFotografijaUPostu.sourceUrl
+                  }
+                />
+              ))}
+            </Slider>
+          </Wrap>
         </>
       )}
     ></StaticQuery>

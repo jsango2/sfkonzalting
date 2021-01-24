@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, graphql, StaticQuery } from "gatsby"
+import { Link } from "gatsby"
 
 const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   const pageNumbers = []

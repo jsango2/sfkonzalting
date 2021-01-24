@@ -1,33 +1,47 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-import timeline from "../../content/assets/images/uslugeTimeline.svg"
+import React, { Component } from "react"
 
+import { graphql } from "gatsby"
+import timeline from "../../content/assets/images/uslugeTimeline.svg"
+import Lottie from "lottie-react"
+import LottieDesktop from "../../content/assets/images/Vodoravna.json"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import UslugeText from "../components/uslugeText"
 import PhotoGrid from "../components/photogrid"
+import styled from "styled-components"
+import PhotoGridMob from "../components/photogridmob"
+import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
+import photo1 from "../../content/assets/images/1.png"
+import photo2 from "../../content/assets/images/2.png"
+import Header from "../components/header"
 
-const usluge = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
+const MobileHide = styled.div`
+  @media only screen and (max-width: 550px) {
+    display: none;
+  }
+`
 
-  return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="Usluge" />
-      <div
-        style={{
-          position: "relative",
-          width: "80%",
-          height: "91px",
-          margin: "50px auto 90px auto",
-          backgroundImage: `url(${timeline})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover ",
-        }}
-      ></div>
-      <UslugeText />
-      <PhotoGrid />
-    </Layout>
-  )
+class usluge extends Component {
+  render() {
+    return (
+      <>
+        <Header />
+        <SEO title="Usluge" />
+        <MobileHide>
+          <Lottie
+            style={{ width: "88%", margin: "0 auto", opacity: "0.6" }}
+            animationData={LottieDesktop}
+          />
+        </MobileHide>
+
+        <UslugeText />
+
+        <PhotoGrid />
+
+        <PhotoGridMob />
+      </>
+    )
+  }
 }
 
 export default usluge

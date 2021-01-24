@@ -1,15 +1,15 @@
 import React from "react"
-import { Link } from "gatsby"
-import styled from "styled-components"
+
 import Header from "./header"
 import Footer from "./footer"
+import FooterSocMreze from "./footerSocMreze"
 
 const Layout = ({ children }) => {
   return (
     <div>
       <Header />
       {children}
-      <Footer />
+      <FooterSocMreze />
     </div>
   )
 }

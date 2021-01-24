@@ -1,48 +1,128 @@
-import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 import CMSizdvojeniCard from "./cmsizdvojenicard"
 import { StaticQuery, graphql } from "gatsby"
-import Carousel, {
-  autoplayPlugin,
-  slidesToShowPlugin,
-  arrowsPlugin,
-} from "@brainhubeu/react-carousel"
-import "@brainhubeu/react-carousel/lib/style.css"
-import { IoIosArrowBack } from "react-icons/Io"
-import { IoIosArrowForward } from "react-icons/Io"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
-const NovostiWrap = styled.div`
-  ${
-    "" /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  }
-  width: 100%;
-  height: auto;
-  ${"" /* padding-top: 86px;
-  padding-bottom: 86px; */}
-
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
-  }
-`
 const Naslov = styled.div`
   font-size: 32px;
-  width: 100%;
+  font-weight: 300;
+  ${"" /* width: 100%; */}
   height: auto;
   margin-left: 129px;
   margin-bottom: 30px;
 
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @media only screen and (max-width: 570px) {
+    font-size: 26px;
+    padding-left: 30px;
+    padding-right: 30px;
+    margin: 0 auto 30px auto;
+    text-align: center;
   }
 `
+const Wrap = styled.div`
+  width: 1230px;
+  min-width: 330px;
+  margin: 0 auto;
+  @media only screen and (max-width: 1100px) {
+    width: 900px;
+  }
+  @media only screen and (max-width: 780px) {
+    width: 620px;
+  }
 
-const CMSizdvojeniProjekti = () => {
+  @media only screen and (max-width: 570px) {
+    width: 100%;
+  }
+`
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props
+  return (
+    <IoIosArrowForward
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "grey",
+        zIndex: "150",
+        top: "50%",
+      }}
+      onClick={onClick}
+    />
+  )
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props
+  return (
+    <IoIosArrowBack
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "grey",
+        zIndex: "150",
+        top: "50%",
+      }}
+      onClick={onClick}
+    />
+  )
+}
+
+const CMSizdvojeniProjekti = props => {
+  const settings = {
+    lazyLoad: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 1,
+    className: "novostiSlider",
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 1,
+          infinite: true,
+          lazyLoad: true,
+          arrows: true,
+          infinite: true,
+          speed: 500,
+        },
+      },
+      {
+        breakpoint: 780,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          infinite: true,
+          lazyLoad: true,
+          arrows: true,
+          infinite: true,
+          speed: 500,
+        },
+      },
+      {
+        breakpoint: 633,
+        settings: {
+          className: "center",
+          centerMode: true,
+          centerPadding: "40px",
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          lazyLoad: true,
+          arrows: false,
+          speed: 500,
+        },
+      },
+    ],
+  }
   return (
     <StaticQuery
       query={graphql`
@@ -60,10 +140,10 @@ const CMSizdvojeniProjekti = () => {
                     ulogaSfKonzaltingaUProjektu
                     uvodUProjekt
                     istaknutaSlika {
-                      sourceUrl
+                      sourceUrl(size: THUMBNAIL)
                     }
                     sirokaFotografijaUPostu {
-                      sourceUrl
+                      sourceUrl(size: LARGE)
                     }
                   }
                 }
@@ -74,60 +154,29 @@ const CMSizdvojeniProjekti = () => {
       `}
       render={data => (
         <>
-          <Naslov>Izdvojeni projekti</Naslov>
-          <Carousel
-            plugins={[
-              "infinite",
-              // "arrows",
-              {
-                resolve: autoplayPlugin,
-                options: {
-                  interval: 5000,
-                },
-              },
-              {
-                resolve: slidesToShowPlugin,
-                options: {
-                  numberOfSlides: 4,
-                },
-              },
-              {
-                resolve: arrowsPlugin,
-                options: {
-                  arrowLeft: (
-                    <button className="ArrowsIzdvojeno">
-                      <IoIosArrowBack />
-                    </button>
-                  ),
-                  arrowRight: (
-                    <button className="ArrowsIzdvojeno">
-                      <IoIosArrowForward />
-                    </button>
-                  ),
-                  addArrowClickHandler: true,
-                },
-              },
-            ]}
-            // animationSpeed={1000}
-            draggable={true}
-          >
-            {data.wpgraphql.wp_projekti.edges.map(projekt => (
-              <CMSizdvojeniCard
-                key={projekt.node.id}
-                date={projekt.node.date}
-                slug={projekt.node.slug}
-                naslov={projekt.node.title}
-                uvodUprojekt={projekt.node.wp_gr_projekt.uvodUProjekt}
-                ulogaUprojektu={
-                  projekt.node.wp_gr_projekt.ulogaSfKonzaltingaUProjektu
-                }
-                fotoFront={projekt.node.wp_gr_projekt.istaknutaSlika.sourceUrl}
-                coverFoto={
-                  projekt.node.wp_gr_projekt.sirokaFotografijaUPostu.sourceUrl
-                }
-              />
-            ))}
-          </Carousel>
+          <Naslov>{props.naslov}</Naslov>
+          <Wrap>
+            <Slider {...settings}>
+              {data.wpgraphql.wp_projekti.edges.map(projekt => (
+                <CMSizdvojeniCard
+                  key={projekt.node.id}
+                  date={projekt.node.date}
+                  slug={projekt.node.slug}
+                  naslov={projekt.node.title}
+                  uvodUprojekt={projekt.node.wp_gr_projekt.uvodUProjekt}
+                  ulogaUprojektu={
+                    projekt.node.wp_gr_projekt.ulogaSfKonzaltingaUProjektu
+                  }
+                  fotoFront={
+                    projekt.node.wp_gr_projekt.istaknutaSlika.sourceUrl
+                  }
+                  coverFoto={
+                    projekt.node.wp_gr_projekt.sirokaFotografijaUPostu.sourceUrl
+                  }
+                />
+              ))}
+            </Slider>
+          </Wrap>
         </>
       )}
     ></StaticQuery>

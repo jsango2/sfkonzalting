@@ -32,79 +32,121 @@ const Background = styled.div`
     #7794b1 127.27%
   );
   transform: rotate(180deg);
-
-  width: 100%;
-  height: 346px;
 `
 
 const WrapOut = styled.div`
   position: relative;
 
   width: 100%;
-  height: 346px;
+
+  height: auto;
+  padding-bottom: 64px;
+`
+const WrapFlex = styled.div`
+  display: flex;
+
+  flex-direction: column;
+  margin: 0 auto;
 `
 const WrapIn = styled.div`
   position: relative;
-  padding-left: 200px;
   padding-top: 102px;
   width: 90%;
-  height: 200px;
+
+  height: auto;
+  padding-left: 0;
+  margin: 0 auto;
+`
+const WrapLogo = styled.div`
+  margin: 0 auto 42px auto;
+  @media only screen and (max-width: 850px) {
+  }
 `
 const WrapFooterText = styled.div`
-  margin-left: 88px;
   position: relative;
   top: -15px;
   width: 90%;
-  height: 200px;
+
+  height: auto;
+  margin: 0 auto;
+  text-align: center;
+`
+const SocMreze = styled.div`
+  ${"" /* @media only screen and (max-width: 850px) {
+    display: none;
+  } */}
+`
+const SocMrezeMob = styled.div`
+  position: absolute;
+  bottom: 130px;
+  left: 50%;
+  margin-top: 33px;
+  transform: translate(-50%, -50%);
+
+  @media only screen and (max-width: 735px) {
+    display: none;
+  }
+`
+const TextSF = styled.div`
+  color: white;
+  font-weight: 300;
+  font-size: 18px;
+  margin-top: 28px;
+  margin-bottom: 112px;
+  line-height: 23px;
+  letter-spacing: 0.035em;
+
+  @media only screen and (max-width: 735px) {
+    margin-bottom: 25px;
+  }
 `
 
 const Footer = () => (
   <WrapOut>
     <Background />
     <WrapIn>
-      <div style={{ display: "flex" }}>
-        <Link to="/">
-          <img className="footerLogoM" src={logo} alt="LogoDom" width="100px" />
-        </Link>
+      <WrapFlex>
+        <WrapLogo>
+          <Link to="/">
+            <img
+              className="footerLogoM"
+              src={logo}
+              alt="LogoDom"
+              width="93px"
+            />
+          </Link>
+        </WrapLogo>
         <WrapFooterText>
-          {" "}
-          <a href="http://www.instagram.com">
-            <img
-              className="footerLogo"
-              src={instagram}
-              alt="instagram"
-              width="40px"
-            />
-          </a>
-          <a href="http://www.facebook.com">
-            <img
-              className="footerLogo"
-              src={facebook}
-              alt="facebook"
-              width="40px"
-            />
-          </a>
-          <a href="http://www.linkedin.com">
-            <img
-              className="footerLogo"
-              src={linkedin}
-              alt="linkedin"
-              width="40px"
-            />
-          </a>
-          <div
-            style={{
-              color: "white",
-              fontWeight: "300",
-              fontSize: "18px",
-              marginTop: "28px",
-              lineHeight: "23px",
-              letterSpacing: "0.035em",
-            }}
-          >
+          <TextSF>
             SF KONZALTING, zajednički obrt za poslovno savjetovanje <br /> OIB:
             26259638284 | IBAN: HR6224070001100065655 (OTP banka)
-          </div>
+          </TextSF>
+          <SocMrezeMob>
+            <a href="https://www.instagram.com/sfkonzalting/">
+              <img
+                className="footerLogo insta"
+                src={instagram}
+                alt="instagram"
+                width="40px"
+              />
+            </a>
+            <a href="https://web.facebook.com/SF-Konzalting-432018117547648/services/?service_id=2385723278127719&_rdc=1&_rdr">
+              <img
+                className="footerLogo fb"
+                src={facebook}
+                alt="facebook"
+                width="40px"
+              />
+            </a>
+            <a href="https://www.linkedin.com/in/sf-konzalting-business-consulting-services-35618a187/?originalSubdomain=hr">
+              <img
+                className="footerLogo ld"
+                src={linkedin}
+                alt="linkedin"
+                width="40px"
+              />
+            </a>
+          </SocMrezeMob>
           <div
             style={{
               color: "white",
@@ -114,11 +156,12 @@ const Footer = () => (
               letterSpacing: "0.035em",
             }}
           >
-            Copyright © 2021 SF konzalting. All rights reserved. Web development
-            by <strong>sutra.hr</strong>
+            Copyright © 2021 SF konzalting. All rights reserved.
+            <br />
+            Web development by <strong>sutra.hr</strong>
           </div>
         </WrapFooterText>
-      </div>
+      </WrapFlex>
     </WrapIn>
   </WrapOut>
 )

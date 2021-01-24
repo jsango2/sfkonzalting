@@ -2,6 +2,8 @@ import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
 import onama from "../../content/assets/images/onama.png"
+import ZeljkaPdf from "../../content/assets/images/CV_Zeljka_Smoljan.pdf"
+import JelenaPdf from "../../content/assets/images/CV_Jelena_Ferrelli.pdf"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -13,14 +15,12 @@ const WrapUp = styled.div`
   margin-top: 60px;
   margin-bottom: 60px;
   ${"" /* padding: 1.85rem 0; */}
-  height: 534px;
+  min-height: 534px;
   display: flex;
   justify-content: space-between;
-  ${
-    "" /* @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
-  } */
+  @media only screen and (max-width: 575px) {
+    margin-top: 30px;
+    flex-direction: column-reverse;
   }
 `
 const Lijevo = styled.div`
@@ -29,13 +29,8 @@ const Lijevo = styled.div`
   ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   background-color: white;
-  ${"" /* display: flex;
-  justify-content: space-between; */}
-  ${
-    "" /* @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
-  } */
+  @media only screen and (max-width: 575px) {
+    width: 100%;
   }
 `
 const Desno = styled.div`
@@ -45,13 +40,15 @@ const Desno = styled.div`
   height: 100%;
   background-color: white;
 
-  ${"" /* display: flex;
-  justify-content: space-between; */}
-  ${
-    "" /* @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
-  } */
+  @media only screen and (max-width: 575px) {
+    width: 100%;
+  }
+`
+const FotoWrap = styled.div`
+  height: 534px;
+
+  @media only screen and (max-width: 575px) {
+    height: 320px;
   }
 `
 const Blok1 = styled.div`
@@ -62,12 +59,12 @@ const Blok1 = styled.div`
   justify-content: flex-end;
   position: relative;
   width: 100%;
-  height: 162px;
+  min-height: 162px;
   font-weight: 300;
   font-size: 32px;
   line-height: 37px;
   color: white;
-
+  padding: 25px 40px;
   background: linear-gradient(
     120.27deg,
     #6a94cc -55.59%,
@@ -126,7 +123,6 @@ const OnamaPage = ({ data, location }) => {
             <div
               style={{
                 position: "relative",
-                left: "-39px",
                 transform: "rotate(180deg)",
                 width: "373px",
               }}
@@ -165,7 +161,9 @@ const OnamaPage = ({ data, location }) => {
               lineHeight: "18px",
             }}
           >
-            JELENA FERRELLI | PDF ŽIVOTOPIS{" "}
+            <a style={{ textDecoration: "none" }} href={JelenaPdf} download>
+              JELENA FERRELLI | PDF ŽIVOTOPIS
+            </a>
           </div>
           <div
             style={{
@@ -177,24 +175,28 @@ const OnamaPage = ({ data, location }) => {
               lineHeight: "18px",
             }}
           >
-            ŽELJKA SMOLJAN | PDF ŽIVOTOPIS
+            <a style={{ textDecoration: "none" }} href={ZeljkaPdf} download>
+              ŽELJKA SMOLJAN | PDF ŽIVOTOPIS
+            </a>
           </div>
           <Link to="/uslugePage" style={{ textDecoration: "none" }}>
-            <Button>POŠALJITE UPIT</Button>
+            <Button className="button">POŠALJITE UPIT</Button>
           </Link>
         </Lijevo>
         <Desno>
-          <div
-            style={{
-              position: "relative",
-              width: "100%",
-              height: "100%",
-              backgroundImage: `url(${onama})`,
-              backgroundPosition: "center",
-              backgroundSize: "cover ",
-              zIndex: "1",
-            }}
-          ></div>
+          <FotoWrap>
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                height: "100%",
+                backgroundImage: `url(${onama})`,
+                backgroundPosition: "center",
+                backgroundSize: "cover ",
+                zIndex: "1",
+              }}
+            ></div>
+          </FotoWrap>
         </Desno>
       </WrapUp>
       <OnamaTriProjekta />

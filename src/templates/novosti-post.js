@@ -1,12 +1,10 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import Cover from "../../content/assets/images/coverProjekt.png"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import CMSponosniCard from "../components/cmsponosnicard"
 import CMSnovostiCarousel from "../components/cmscarouselnovosti"
 
 const Wrap = styled.div`
@@ -16,27 +14,22 @@ const Wrap = styled.div`
   width: 85%;
   justify-content: space-between;
   height: 800px;
+  @media only screen and (max-width: 1100px) {
+    ${"" /* width: 940px;
+    padding-left: 30px; */}
+  }
+  @media only screen and (max-width: 780px) {
+    height: auto;
+    width: 620px;
+  }
+
+  @media only screen and (max-width: 570px) {
+    flex-direction: column;
+    width: 100%;
+    padding-left: 30px;
+  }
 `
-const BlueBox = styled.div`
-  ${"" /* margin: 0 auto;
-  display: flex; */}
-  position: relative;
-  width: 100%;
-  justify-content: space-between;
-  height: 280px;
-  padding-top: 35px;
-  padding-right: 35px;
-  padding-left: 37px;
-  color: white;
-  background: linear-gradient(
-    114.13deg,
-    #6c84c1 14.71%,
-    #6a94cc 32.16%,
-    #67aee0 53%,
-    #63c6f1 69.93%,
-    #75d5e4 97.04%
-  );
-`
+
 const Lijevo = styled.div`
   ${"" /* margin: 0 auto; */}
   width: 47%;
@@ -46,11 +39,9 @@ const Lijevo = styled.div`
   background-color: white;
   ${"" /* display: flex;
   justify-content: space-between; */}
-  ${
-    "" /* @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
-  } */
+
+  @media only screen and (max-width: 570px) {
+    width: 95%;
   }
 `
 const Desno = styled.div`
@@ -61,11 +52,10 @@ const Desno = styled.div`
   padding-top: 53px;
   ${"" /* display: flex;
   justify-content: space-between; */}
-  ${
-    "" /* @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
-  } */
+  @media only screen and (max-width: 570px) {
+  width: 95%;
+  
+  }
   }
 `
 const Button = styled.div`
@@ -83,18 +73,7 @@ const Button = styled.div`
   font-weight: 300;
   font-size: 22px;
   text-decoration: none;
-  ${"" /* margin: 0 auto 0 130px; */}
-  ${
-    "" /* @media only screen and (max-width: 1000px) {
-    marginleft: 108px;
-  }
-  @media only screen and (max-width: 768px) {
-    margin-bottom: 54px;
-    margin-left: 15%;
-  }
-  @media only screen and (max-width: 420px) {
-
-  } */
+  @media only screen and (max-width: 570px) {
   }
 `
 const WrapDoli = styled.div`
@@ -109,23 +88,11 @@ const WrapDoli = styled.div`
   padding-top: 50px;
   padding-bottom: 86px;
   background: rgba(196, 196, 196, 0.1);
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @media only screen and (max-width: 570px) {
+    margin-top: 78px;
   }
 `
-const Naslov = styled.div`
-  font-size: 32px;
-  width: 100%;
-  height: auto;
-  text-align: center;
-  margin-bottom: 50px;
 
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
-  }
-`
 const Overlay = styled.div`
   position: absolute;
   z-index: 500;
@@ -160,6 +127,23 @@ const Overlay = styled.div`
 `
 
 const Objekt = ({ data }) => {
+  const [datum, setDatum] = useState("-")
+  useEffect(() => {
+    let datumPosta = data.wpgraphql.wp_novost.date
+    function formatDate(date) {
+      var d = new Date(date),
+        month = "" + (d.getMonth() + 1),
+        day = "" + d.getDate(),
+        year = d.getFullYear()
+
+      if (month.length < 2) month = "0" + month
+      if (day.length < 2) day = "0" + day
+
+      return [day, month, year].join(".")
+    }
+    setDatum(formatDate(datumPosta))
+  }, [data.wpgraphql.wp_novost.date])
+
   // ------visibility lazy loading------------
   // --------------------------------------
 
@@ -190,11 +174,23 @@ const Objekt = ({ data }) => {
               fontSize: "32px",
               // width: "89%",
               // marginLeft: "10px",
-              marginBottom: "50px",
+              marginBottom: "15px",
               lineHeight: "37.5px",
             }}
           >
             {data.wpgraphql.wp_novost.title}
+          </div>
+          <div
+            style={{
+              fontWeight: "300",
+              color: "#A0A0A0",
+              fontSize: "16px",
+
+              marginBottom: "30px",
+              lineHeight: "37.5px",
+            }}
+          >
+            {datum}
           </div>
           <div
             style={{
@@ -223,7 +219,7 @@ const Objekt = ({ data }) => {
             }}
           ></div>
           <Link to="/uslugePage" style={{ textDecoration: "none" }}>
-            <Button>POŠALJITE UPIT</Button>
+            <Button className="button">POŠALJITE UPIT</Button>
           </Link>
         </Desno>
       </Wrap>

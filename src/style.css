@@ -321,18 +321,22 @@ a:focus {
 /* ---------------HEADER------------- */
 .LinkHeader {
   color: black;
-  margin-left: 90px;
+  /* margin-left: 90px; */
   font-size: 18px;
   font-weight: 300;
 }
 
 .primary-nav {
+  width: 560px;
   position: relative;
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
+  /* flex-flow: row wrap; */
+  justify-content: space-between;
   align-items: center;
   margin-right: 126px;
+}
+.primary-nav a:hover {
+  color: gray;
 }
 .primary-nav > a {
   text-decoration: none;
@@ -340,6 +344,23 @@ a:focus {
 .headerShadow {
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
   clip-path: inset(0px 0px -4px 0px);
+}
+
+.headroom--unpinned {
+  left: 0;
+  transform: translateY(-100%);
+  width: 100%;
+}
+.headroom--pinned {
+  margin: 0 auto;
+  left: 0;
+
+  width: 100%;
+  position: fixed;
+  transform: translateY(0%);
+}
+.headroom--scrolled {
+  transition: transform 300ms ease-in-out;
 }
 /* --------------HERO------------- */
 .hero {
@@ -365,76 +386,69 @@ a:focus {
   );
 }
 .footerLogo {
+  transition: all 0.4s ease-in-out;
   margin-right: 12.4px;
+  position: absolute;
+}
+.footerLogo:hover {
+  width: 44px;
+}
+.footerLogo.insta {
+  left: -90px;
+}
+.footerLogo.fb {
+  left: -30px;
+}
+.footerLogo.ld {
+  left: 30px;
+}
+.mob {
+  margin-left: 10px;
 }
 
 /* -----------FOOTER------------------ */
 
-.BrainhubCarousel__arrows {
-  position: relative;
-  padding: 21px;
-  border: none;
-  overflow: hidden;
-  outline: 0;
-  font-size: 0;
-  line-height: 0;
-
-  background-color: transparent !important;
-}
-.BrainhubCarousel__arrowRight {
-  position: relative;
-  top: 20px;
-  right: 30px;
-}
-.BrainhubCarousel__arrowLeft {
-  position: relative;
-  top: 20px;
-  left: 30px;
-}
-/* .BrainhubCarousel {
-  width: 900px !important;
-} */
-.BrainhubCarousel__container {
-  margin: 0 auto !important;
-  width: 1120px !important;
-}
-.BrainhubCarousel__customArrows button {
-  position: relative;
-  top: -50px;
-  background: transparent;
-  border: none;
-  outline: none;
-  color: grey;
-  font-size: 30px;
-  cursor: pointer;
-}
 .ArrowsIzdvojeno {
   position: relative;
   margin-top: 60px;
 }
 /* ------------------carousel--------------- */
 
-@media screen and (max-width: 960px) {
-  .primary-nav {
-    top: 0;
-    margin-right: 15%;
-  }
-  .primary-nav > a {
-    margin-left: 32px !important;
-    position: relative;
-    bottom: 12px;
-  }
+.novostiSlider .slick-prev:before {
+  position: relative;
+  top: -50px;
+  color: rgb(185, 184, 184) !important;
 }
-@media screen and (max-width: 660px) {
-  .primary-nav {
-    top: 0;
-    margin-right: 10%;
-  }
-  .primary-nav > a {
-    margin-left: 22px !important;
-    position: relative;
-    bottom: 12px;
-  }
+.novostiSlider .slick-next:before {
+  position: relative;
+  top: -50px;
+  right: -8px;
+  color: rgb(185, 184, 184) !important;
+}
+
+/* ----------------------- */
+
+/* .izdvojeniSlider .slick-prev:before {
+  position: relative;
+  top: -50px;
+  color: rgb(201, 38, 38) !important;
+}
+.izdvojeniSlider .slick-next:before {
+  position: relative;
+  top: -50px;
+  color: rgb(163, 13, 13) !important;
+} */
+/* ------------------------- */
+
+.testimonialSlider .slick-prev:before {
+  position: relative;
+  top: 30px;
+  color: rgba(167, 167, 167, 0.719) !important;
+}
+.testimonialSlider .slick-next:before {
+  position: relative;
+  top: 30px;
+  color: rgba(163, 161, 161, 0.712) !important;
 }
 
 @media (max-width: 42rem) {
@@ -442,10 +456,10 @@ a:focus {
     padding: var(--spacing-0) var(--spacing-0) var(--spacing-0) var(--spacing-4);
     margin-left: var(--spacing-0);
   }
-  ul,
+  /* ul,
   ol {
     list-style-position: inside;
-  }
+  } */
 }
 .div-block-57 {
   display: -ms-grid;
@@ -653,16 +667,19 @@ a:focus {
   filter: grayscale(100%);
   transition: all 1.5s;
 }
+.coverPhoto2 {
+  transition: all 0.8s ease;
+}
 
 .coverPhoto:hover {
   filter: none !important;
 }
 .textIzdvojeni {
-  transition: all 1.5s;
+  transition: all 0.9s;
 }
 .paginationWrap {
   color: black;
-  height: 100px;
+  height: 130px;
 }
 .pagination {
   display: flex;
@@ -683,4 +700,361 @@ a:focus {
   font-style: oblique;
   margin: 5px;
   text-decoration: none;
+}
+.slick-initialized {
+  width: 84%;
+  margin: 0 auto;
+}
+.slick-slide {
+  transition: opacity 1s ease;
+}
+.slick-slide > div {
+  /* margin: 0 0; */
+  margin-right: 10px;
+}
+.slick-list {
+  margin: 0 -10px;
+}
+.slick-dots {
+  position: absolute;
+  bottom: -70px !important;
+
+  display: block;
+
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+  list-style: none;
+
+  text-align: center;
+}
+
+.slick-dots li button:before {
+  font-family: "slick";
+  font-size: 6px;
+  line-height: 20px;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 20px;
+  height: 20px;
+
+  content: "•";
+  text-align: center;
+
+  opacity: 0.25;
+  color: grey;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before {
+  opacity: 0.75;
+  color: white;
+}
+
+.sectionInView {
+  z-index: 200;
+  animation: scale-in-center 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  visibility: hidden;
+  will-change: visibility;
+}
+.sectionInView.is-visible {
+  z-index: 200;
+
+  visibility: visible;
+}
+.mobileLinks {
+  position: relative;
+  z-index: 99999;
+  text-decoration: none;
+  margin-top: 48px;
+  font-weight: 300;
+  color: #000000;
+}
+
+.closeMenuMobile {
+  position: absolute;
+  z-index: 99999;
+  top: 25px;
+  right: 43px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.hide-menu {
+  transition: all 0.3s linear;
+  transform: translateX(-100%);
+  visibility: hidden;
+}
+.show-menu {
+  transform: translateX(0);
+  transition: all 0.3s linear;
+  visibility: show;
+}
+.button:hover {
+  background-color: #f7f7f7;
+}
+.button:active {
+  background-color: #dadada;
+}
+.saznajVise:hover {
+  color: #005b99 !important;
+}
+.removeUnderline a {
+  text-decoration: none;
+  color: #000000;
+}
+.backgroundMobileMeni {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    114.13deg,
+    #ac84bc -0.34%,
+    #a684bc 2.01%,
+    #9382bc 5.66%,
+    #747fbd 10.15%,
+    #6c7ebd 11.12%,
+    #6c84c1 14.71%,
+    #6a94cc 20.82%,
+    #67aee0 28.65%,
+    #63c6f1 34.49%,
+    #95d2dc 49.73%,
+    #b7dece 64.66%,
+    #c3e3c8 73.15%,
+    #eba8c1 96.4%,
+    #bc9fba 101.81%,
+    #9799b5 106.72%,
+    #8095b2 110.55%,
+    #7794b1 112.81%
+  );
+}
+/* .slick-prev {
+}
+.slick-next {
+
+} */
+.mobileHeroNaslovi {
+  -webkit-animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fade-in 1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.scale-in-ver-top {
+  position: relative;
+  top: -20px;
+  width: 2px;
+  height: 0px;
+  background-color: white;
+  margin: 0 28px;
+  animation-delay: 1s;
+  animation: line_animation 2s linear;
+  animation-fill-mode: forwards;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-21 10:26:43
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-in-ver-top
+ * ----------------------------------------
+ */
+@keyframes line_animation {
+  0% {
+    height: 0px;
+  }
+  100% {
+    height: 350px;
+  }
+}
+
+.scale-up-top {
+  -webkit-animation: scale-up-top 1.2s linear;
+  animation: scale-up-top 1.2s linear;
+}
+/* ----------------------------------------------
+ * Generated by Animista on 2021-1-21 10:2:54
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation scale-up-top
+ * ----------------------------------------
+ */
+
+@keyframes scale-up-top {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 0% 0%;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 0% 0%;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * animation scale-in-center
+ * ----------------------------------------
+ */
+@-webkit-keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes scale-in-center {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.activeLink {
+  font-weight: 700;
+}
+
+@media screen and (max-width: 960px) {
+  .primary-nav {
+    width: 400px;
+  }
+  /* .primary-nav > a {
+  } */
+}
+@media screen and (max-width: 780px) {
+  .primary-nav {
+    display: none;
+  }
+  /* .closeMenuMobile {
+    display: none;
+  } */
+}
+@media screen and (max-width: 632px) {
+  .slick-initialized {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 550px) {
+  .primary-nav {
+    display: none;
+  }
+  .novostiSlider .slick-prev:before {
+    position: relative;
+    left: 20px;
+    top: -50px;
+    color: rgb(185, 184, 184) !important;
+  }
+  .novostiSlider .slick-next:before {
+    position: relative;
+    top: -50px;
+    right: 20px;
+    color: rgb(185, 184, 184) !important;
+  }
+
+  /* ----------------------- */
+
+  .izdvojeniSlider .slick-prev:before {
+    position: relative;
+    top: -50px;
+    color: rgb(201, 38, 38) !important;
+  }
+  .izdvojeniSlider .slick-next:before {
+    position: relative;
+    top: -50px;
+    color: rgb(163, 13, 13) !important;
+  }
+  /* ------------------------- */
+  .slick-initialized {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .slick-slide > div {
+    margin: 0 5px;
+  }
+  /* .slick-slide {
+
+    opacity: 0.6;
+  }
+  .slick-center {
+    opacity: 1 !important;
+  } */
+}
+/* @media screen and (max-width: 631px) {
+  .slick-slide {
+    filter: grayscale(100%);
+    opacity: 0.6;
+  }
+  .slick-center {
+    filter: none;
+    opacity: 1 !important;
+  }
+} */
+@media screen and (max-width: 510px) {
+  .mobileNovostiCard {
+    padding-left: 5px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .slick-dots {
+    position: absolute;
+    bottom: -20px !important;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 780px) {
+  .closeMenuMobile {
+    display: none;
+  }
 }

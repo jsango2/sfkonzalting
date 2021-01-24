@@ -1,12 +1,11 @@
 import React from "react"
 import styled from "styled-components"
 import background from "../../content/assets/images/bckg.png"
-
-// import Quote from "../images/quote.svg"
-// import Background from "../images/radniciBG.jpg"
 import { StaticQuery, graphql } from "gatsby"
-import Carousel, { autoplayPlugin } from "@brainhubeu/react-carousel"
-import "@brainhubeu/react-carousel/lib/style.css"
+import Slider from "react-slick"
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 
 const Wrap = styled.div`
   ${"" /* display: flex; */}
@@ -50,18 +49,30 @@ const Overlay = styled.div`
   opacity: 0.9;
 `
 
+const OverlayNaslovDrugiOnama = styled.div`
+  font-weight: 300;
+  font-size: 32px;
+  text-align: center;
+  color: white;
+  position: absolute;
+  z-index: 150;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @media only screen and (max-width: 560px) {
+    display: none;
+  }
+`
 const AutorTestimoniala = styled.div`
   text-align: center;
   font-size: 22px;
   font-weight: 300;
   line-height: 28.49px;
-  margin-top: 50px;
+  margin-top: 10px;
   color: white;
-  @media only screen and (max-width: 48em) {
-    margin-top: 130px;
-  }
+
   @media only screen and (max-width: 360px) {
-    margin-top: 110px;
+    margin-top: 60px;
 
     font-size: 16px;
     line-height: 19.5px;
@@ -69,8 +80,8 @@ const AutorTestimoniala = styled.div`
 `
 const ZanimanjeAutora = styled.div`
   text-align: center;
-  font-size: 22px;
-  font-style: italic;
+  font-size: 16px;
+  ${"" /* font-style: italic; */}
   font-weight: 300;
   line-height: 28.49px;
   margin: 0 auto;
@@ -91,28 +102,86 @@ const Paragraf = styled.div`
   position: relative;
   z-index: 100;
   width: 668px;
-  height: 110px;
+  ${"" /* height: 30px; */}
   text-align: center;
   font-size: 22px;
   font-weight: 300;
   line-height: 28.49px;
-  margin: 170px auto 0 auto;
+  margin: 170px auto 30px auto;
   color: white;
-  @media only screen and (max-width: 48em) {
+  @media only screen and (max-width: 560px) {
     font-size: 19px;
 
     width: 90%;
     margin-top: 150px;
   }
-  @media only screen and (max-width: 360px) {
-    margin-top: 200px;
+  @media only screen and (max-width: 440px) {
+    margin-top: 150px;
     width: 85%;
     font-size: 16px;
     line-height: 19.5px;
   }
 `
+function SampleNextArrow(props) {
+  const { className, style, onClick } = props
+  return (
+    <IoIosArrowForward
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "white",
+        zIndex: "150",
+        top: "60%",
+      }}
+      onClick={onClick}
+    />
+  )
+}
+
+function SamplePrevArrow(props) {
+  const { className, style, onClick } = props
+  return (
+    <IoIosArrowBack
+      className={className}
+      style={{
+        ...style,
+        display: "block",
+        color: "white",
+        zIndex: "150",
+        top: "60%",
+      }}
+      onClick={onClick}
+    />
+  )
+}
 
 const Testimonial = () => {
+  const settings = {
+    // arrows: true,
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    nextArrow: <SampleNextArrow />,
+    prevArrow: <SamplePrevArrow />,
+    className: "testimonialSlider",
+    responsive: [
+      {
+        breakpoint: 450,
+        settings: {
+          dots: true,
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          infinite: true,
+          lazyLoad: true,
+          arrows: false,
+          speed: 500,
+        },
+      },
+    ],
+  }
   return (
     <StaticQuery
       query={graphql`
@@ -146,20 +215,8 @@ const Testimonial = () => {
           ></div>
           {/* {console.log(data)} */}
           <Overlay />
-          <Carousel
-            plugins={[
-              "infinite",
-              "arrows",
-              {
-                resolve: autoplayPlugin,
-                options: {
-                  interval: 5000,
-                },
-              },
-            ]}
-            animationSpeed={1000}
-            draggable={true}
-          >
+          <OverlayNaslovDrugiOnama>Drugi o nama</OverlayNaslovDrugiOnama>
+          <Slider {...settings}>
             {data.wpgraphql.wp_izjave.edges.map(testimonial => (
               <div key={testimonial.node.title} className="visibleContent">
                 <Paragraf
@@ -174,7 +231,7 @@ const Testimonial = () => {
                 </ZanimanjeAutora>
               </div>
             ))}
-          </Carousel>
+          </Slider>
         </Wrap>
       )}
     ></StaticQuery>

@@ -1,7 +1,6 @@
 import { Link } from "gatsby"
 import React, { useState } from "react"
 import styled from "styled-components"
-import cardphoto from "../../content/assets/images/cmsizdvojeno.png"
 
 const CardWrap = styled.div`
   ${
@@ -10,21 +9,37 @@ const CardWrap = styled.div`
   justify-content: center;
   flex-direction: column; */
   }
-  position: relative;
-  z-index: 500;
+  max-width: 280px;
   width: 245px;
-  height: 349px;
-  ${"" /* padding-left: 17px; */}
-  ${"" /* padding-bottom: 86px;  */}
-  transition: max-height 1.5s;
-
-  &:hover .textIzdvojeni {
-    opacity: 1;
-    height: 100px;
+  min-width: 230px;
+  height: 316px;
+  margin-left: 8px;
+  margin-right: 8px;
+  animation: fade-in 1s ease-out both;
+  ${"" /* margin-left: 10px;
+  margin-right: 10px; */}
+  @-webkit-keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  &:hover .coverPhoto2 {
+    transform: scale(1.03);
+  }
+  @media only screen and (max-width: 633px) {
+    max-width: 100%;
+    width: 100%;
   }
 `
 const Text = styled.div`
@@ -84,13 +99,12 @@ const CMSizdvojeniCard = props => {
   return (
     <Link style={{ textDecoration: "none" }} to={`/projekti/${props.slug}`}>
       <CardWrap>
-        {console.log(props)}
         <div
           style={{
             position: "relative",
             width: "100%",
             height: "100%",
-            backgroundImage: `url(${props.coverFoto})`,
+            backgroundImage: `url(${props.fotoFront})`,
             backgroundPosition: "center",
             backgroundSize: "cover ",
             zIndex: "25",

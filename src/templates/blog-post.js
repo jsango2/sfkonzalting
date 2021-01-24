@@ -1,12 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import Cover from "../../content/assets/images/coverProjekt.png"
 import { Link } from "gatsby"
-
 import SEO from "../components/seo"
 import Layout from "../components/layout"
-import CMSponosniCard from "../components/cmsponosnicard"
+import CMSizdvojeniProjekti from "./../components/cmsizdvojeniprojekti"
 
 const Wrap = styled.div`
   margin: 0 auto;
@@ -15,6 +13,12 @@ const Wrap = styled.div`
   width: 85%;
   justify-content: space-between;
   height: 800px;
+  @media only screen and (max-width: 570px) {
+    flex-direction: column;
+    height: auto;
+    width: 100%;
+    padding-left: 30px;
+  }
 `
 const BlueBox = styled.div`
   ${"" /* margin: 0 auto;
@@ -45,11 +49,9 @@ const Lijevo = styled.div`
   background-color: white;
   ${"" /* display: flex;
   justify-content: space-between; */}
-  ${
-    "" /* @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
-  } */
+  @media only screen and (max-width: 570px) {
+    width: 95%;
+  }
   }
 `
 const Desno = styled.div`
@@ -60,11 +62,13 @@ const Desno = styled.div`
   padding-top: 53px;
   ${"" /* display: flex;
   justify-content: space-between; */}
-  ${
-    "" /* @media only screen and (max-width: 60em) {
-    display: block;
-    padding: 0 0;
-  } */
+  @media only screen and (max-width: 570px) {
+    width: 95%;
+  }
+`
+const Photo = styled.div`
+  @media only screen and (max-width: 570px) {
+    display: none;
   }
 `
 const Button = styled.div`
@@ -82,17 +86,10 @@ const Button = styled.div`
   font-weight: 300;
   font-size: 22px;
   text-decoration: none;
-  ${"" /* margin: 0 auto 0 130px; */}
-  ${
-    "" /* @media only screen and (max-width: 1000px) {
-    marginleft: 108px;
-  }
-  @media only screen and (max-width: 768px) {
-    margin-bottom: 54px;
-    margin-left: 15%;
-  }
-  @media only screen and (max-width: 420px) {
 
+  ${
+    "" /* @media only screen and (max-width: 570px) {
+    marginleft: 108px;
   } */
   }
 `
@@ -108,9 +105,8 @@ const WrapDoli = styled.div`
   padding-top: 50px;
   padding-bottom: 86px;
   background: rgba(196, 196, 196, 0.1);
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @media only screen and (max-width: 570px) {
+    margin-top: 78px;
   }
 `
 const Naslov = styled.div`
@@ -226,7 +222,7 @@ const Objekt = ({ data }) => {
           </BlueBox>
         </Lijevo>
         <Desno>
-          <div
+          <Photo
             style={{
               position: "relative",
               width: "100%",
@@ -237,7 +233,7 @@ const Objekt = ({ data }) => {
               backgroundSize: "cover ",
               zIndex: "1",
             }}
-          ></div>
+          ></Photo>
           <Link to="/uslugePage" style={{ textDecoration: "none" }}>
             <Button>POŠALJITE UPIT</Button>
           </Link>
@@ -245,17 +241,9 @@ const Objekt = ({ data }) => {
       </Wrap>
       <WrapDoli>
         <Naslov>Pogledajte i naše ostale projekte</Naslov>
-        <div
-          style={{
-            display: "flex",
-            width: "768px",
-            justifyContent: "space-between",
-            margin: "0 auto 40px auto",
-          }}
-        >
-          <CMSponosniCard />
-          <CMSponosniCard />
-          <CMSponosniCard />
+
+        <div>
+          <CMSizdvojeniProjekti />
         </div>
       </WrapDoli>
     </Layout>

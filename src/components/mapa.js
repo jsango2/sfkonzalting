@@ -1,7 +1,7 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
-import mapa from "../../content/assets/images/Karta.png"
+import DonjiDioKontaktMob from "./donjidiokontaktmob"
 import MapboxFile from "./mapboxFile"
 
 const MapaWrap = styled.div`
@@ -10,83 +10,55 @@ const MapaWrap = styled.div`
   ${"" /* flex-direction: column; */}
   position: relative;
   width: 100%;
-  height: 923px;
+  height: 450px;
 
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @media only screen and (max-width: 735) {
+    height: auto;
   }
 `
-const Naslov = styled.div`
-  width: 100%;
-  font-size: 32px;
-  font-weight: 300;
-  text-align: center;
-  margin-bottom: 60px;
 
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
-  }
-`
-const Partneri = styled.div`
-  width: 90%;
-  color: #a4a4a4;
-  font-size: 14px;
-  font-weight: 300;
-  text-align: center;
-  margin: 0 auto 60px auto;
-  line-height: 18px;
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
-  }
-`
 const DonjiDio = styled.div`
-  position: absolute;
-  bottom: 0;
+  position: relative;
   display: flex;
   width: 100%;
-  height: 50%;
+  height: 463px;
   background-color: white;
   opacity: 0.9;
   z-index: 2;
 
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  @media only screen and (max-width: 735px) {
+    display: none;
   }
 `
 const KakoDoNas = styled.div`
-  position: absolute;
-  bottom: 0;
-  ${"" /* display: flex; */}
+  position: relative;
+  color: black;
   width: 50%;
   height: 100%;
   opacity: 0.9;
   z-index: 3;
-  padding-top: 119px;
+  padding-top: 148px;
   text-align: center;
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  font-weight: 300;
+  @media only screen and (max-width: 735px) {
+    width: 100%;
   }
 `
 const Kontakt = styled.div`
-  position: absolute;
-  bottom: 0;
-  right: 0;
+  position: relative;
+
   ${"" /* display: flex; */}
   width: 50%;
   height: 100%;
   ${"" /* background-color: red; */}
   opacity: 0.9;
   z-index: 3;
-  padding-top: 119px;
+  padding-top: 148px;
   text-align: center;
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+  font-weight: 300;
+  color: black;
+  @media only screen and (max-width: 735px) {
+    width: 100%;
   }
 `
 const Button = styled.div`
@@ -121,19 +93,11 @@ const Button = styled.div`
 
 const Mapa = () => {
   return (
-    <MapaWrap>
-      {/* <div
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          backgroundImage: `url(${mapa})`,
-          backgroundPosition: "center",
-          backgroundSize: "cover ",
-          zIndex: "1",
-        }}
-      /> */}
-      <MapboxFile />
+    <>
+      <MapaWrap>
+        <MapboxFile />
+      </MapaWrap>
+      <DonjiDioKontaktMob />
       <DonjiDio>
         <KakoDoNas>
           <div style={{ fontSize: "32px", marginBottom: "29px" }}>
@@ -147,12 +111,15 @@ const Mapa = () => {
               margin: "0 auto 29px auto",
             }}
           ></div>
-          <div style={{ fontSize: "32px", marginBottom: "54px" }}>
-            Ive Senjanina 12b,
-            <br /> 23000 Zadar
-          </div>
-          <div style={{ fontSize: "18px" }}>
-            Radno vrijeme: Pon/Pet 08–16 h{" "}
+          <div
+            style={{
+              fontSize: "24px",
+              lineHeight: "34.7px",
+              marginBottom: "54px",
+            }}
+          >
+            Ive Senjanina 12b, 23000 Zadar
+            <br /> Radno vrijeme: Pon/Pet 08–16 h{" "}
           </div>
         </KakoDoNas>
         <Kontakt>
@@ -165,16 +132,13 @@ const Mapa = () => {
               margin: "0 auto 29px auto",
             }}
           ></div>
-          <div style={{ fontSize: "32px", marginBottom: "40px" }}>
+          <div style={{ fontSize: "24px", marginBottom: "40px" }}>
             +385 91 5234 932
             <br /> sfkonzalting@gmail.com
           </div>
-          <Link to="/usluge" style={{ textDecoration: "none" }}>
-            <Button>PRETPLATI SE NA NEWSLETTER</Button>
-          </Link>
         </Kontakt>
       </DonjiDio>
-    </MapaWrap>
+    </>
   )
 }
 

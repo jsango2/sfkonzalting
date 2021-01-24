@@ -9,8 +9,8 @@ const UslugeWrap = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  height: 336px;
-  padding-top: 86px;
+  min-height: 336px;
+  padding-top: 90px;
   padding-bottom: 86px;
 
   @media only screen and (max-width: 60em) {
@@ -74,7 +74,7 @@ const CTAusluge = () => {
         pokretanju pozitivnih društvenih promjena
       </Text>
       <Link to="/usluge" style={{ textDecoration: "none" }}>
-        <Button>USLUGE KOJE NUDIMO</Button>
+        <Button className="button">USLUGE KOJE NUDIMO</Button>
       </Link>
     </UslugeWrap>
   )

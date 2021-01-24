@@ -2,7 +2,6 @@ import React from "react"
 import { Link } from "gatsby"
 
 import styled from "styled-components"
-import background from "../../content/assets/images/bckg.png"
 
 const Wrap = styled.div`
   display: flex;
@@ -10,12 +9,13 @@ const Wrap = styled.div`
   justify-content: center;  */}
   position: relative;
   width: 90%;
-  height: 835px;
+  height: auto;
   margin: 0 auto;
-  ${"" /* z-index: 1; */}
-  ${"" /* @media only screen and (max-width: 48em) {
-    height: 495px;
-  } */}
+  padding-bottom: 30px;
+  @media only screen and (max-width: 550px) {
+    margin-top: 40px;
+    flex-direction: column;
+  }
 `
 const StupacLijevo = styled.div`
   ${"" /* display: flex; */}
@@ -26,6 +26,16 @@ const StupacLijevo = styled.div`
   height: auto;
   margin: 0 auto;
   ${"" /* z-index: 1; */}
+  @media only screen and (max-width: 550px) {
+    width: 90%;
+  }
+`
+
+const BlokTekst = styled.div`
+  position: relative;
+
+  transform: rotate(180deg);
+  width: 373px;
   ${"" /* @media only screen and (max-width: 48em) {
     height: 495px;
   } */}
@@ -39,10 +49,9 @@ const StupacDesno = styled.div`
   height: auto;
   margin: 0 auto;
 
-  ${"" /* z-index: 1; */}
-  ${"" /* @media only screen and (max-width: 48em) {
-    height: 495px;
-  } */}
+  @media only screen and (max-width: 550px) {
+    width: 90%;
+  }
 `
 const Blok1 = styled.div`
   position: relative;
@@ -52,12 +61,12 @@ const Blok1 = styled.div`
   justify-content: flex-end;
   position: relative;
   width: 100%;
-  height: 159px;
+  min-height: 159px;
   font-weight: 300;
   font-size: 32px;
   line-height: 37px;
   color: white;
-
+  padding: 25px 40px;
   background: linear-gradient(
     120.27deg,
     #6a94cc -55.59%,
@@ -81,12 +90,12 @@ const Blok2 = styled.div`
   justify-content: flex-end;
   position: relative;
   width: 100%;
-  height: 128px;
+  min-height: 128px;
   font-weight: 300;
   font-size: 32px;
   line-height: 37px;
   color: white;
-
+  padding: 25px 40px;
   background: linear-gradient(
     120.27deg,
     #6a94cc -55.59%,
@@ -117,18 +126,9 @@ const Button = styled.div`
   font-weight: 300;
   font-size: 22px;
   text-decoration: none;
-  ${"" /* margin: 0 auto 0 130px; */}
-  ${
-    "" /* @media only screen and (max-width: 1000px) {
-    marginleft: 108px;
-  }
-  @media only screen and (max-width: 768px) {
-    margin-bottom: 54px;
-    margin-left: 15%;
-  }
-  @media only screen and (max-width: 420px) {
 
-  } */
+  @media only screen and (max-width: 550px) {
+    margin-bottom: 40px;
   }
 `
 
@@ -137,18 +137,10 @@ const UslugeText = () => {
     <Wrap>
       <StupacLijevo>
         <Blok1>
-          <div
-            style={{
-              position: "relative",
-              left: "-39px",
-              transform: "rotate(180deg)",
-              width: "373px",
-            }}
-          >
-            {" "}
+          <BlokTekst>
             Izrada poslovnih planova, investicijskih studija i cost benefit
             analiza
-          </div>
+          </BlokTekst>
         </Blok1>
         <div
           style={{
@@ -211,6 +203,7 @@ const UslugeText = () => {
             fontSize: "14px",
             width: "89%",
             marginLeft: "10px",
+            marginBottom: "60px",
             marginTop: "21px",
             lineHeight: "18px",
           }}
@@ -223,18 +216,7 @@ const UslugeText = () => {
       </StupacLijevo>
       <StupacDesno>
         <Blok2>
-          {" "}
-          <div
-            style={{
-              position: "relative",
-              left: "-39px",
-              transform: "rotate(180deg)",
-              width: "373px",
-            }}
-          >
-            {" "}
-            Izrada EU i nacionalnih projekata
-          </div>
+          <BlokTekst>Izrada EU i nacionalnih projekata</BlokTekst>
         </Blok2>
         <div
           style={{
@@ -259,17 +241,7 @@ const UslugeText = () => {
         </div>
         <Blok2>
           {" "}
-          <div
-            style={{
-              position: "relative",
-              left: "-39px",
-              transform: "rotate(180deg)",
-              width: "373px",
-            }}
-          >
-            {" "}
-            Poslovno savjetovanje i izobrazba
-          </div>
+          <BlokTekst>Poslovno savjetovanje i izobrazba</BlokTekst>
         </Blok2>
         <div
           style={{
@@ -288,7 +260,7 @@ const UslugeText = () => {
           EU fondove i projekte.
         </div>
         <Link to="/uslugePage" style={{ textDecoration: "none" }}>
-          <Button>POŠALJITE UPIT</Button>
+          <Button className="button">POŠALJITE UPIT</Button>
         </Link>
       </StupacDesno>
     </Wrap>

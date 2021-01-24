@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from "react"
-import { Link, graphql, StaticQuery, useStaticQuery } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
-import CMSnovostCard from "../components/cmsnovosticard"
 import NovostiSve from "../components/novostiSve"
 
-const Wrap = styled.div`
-  display: flex;
-  ${"" /* ${"" /* align-items: center; */} */}
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 60px auto 85px auto;
+// const Wrap = styled.div`
+//   display: flex;
+//   ${"" /* ${"" /* align-items: center; */} */}
+//   flex-wrap: wrap;
+//   justify-content: space-between;
+//   margin: 60px auto 85px auto;
 
-  ${"" /* padding-left: 17px; */}
-  ${"" /* padding-bottom: 86px;  */}
-  width: 1020px;
-  @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
-  }
-`
+//   ${"" /* padding-left: 17px; */}
+//   ${"" /* padding-bottom: 86px;  */}
+//   width: 1020px;
+//   @media only screen and (max-width: 60em) {
+//     ${"" /* display: block;
+//     padding: 0 0; */}
+//   }
+// `
 const HeroWrap = styled.div`
   display: flex;
   align-items: center;
