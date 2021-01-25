@@ -115,16 +115,7 @@ const Onama = () => {
             uspostavama novih odjela, radom u privatnom, neprofitnom, javnom i
             državnom sektoru je temelj garancije našeg znanja koje dijelimo s
             Vama.
-            <div
-              className="removeUnderline"
-              style={{
-                fontWeight: "700",
-                fontSize: "14px",
-                textAlign: "end",
-                marginTop: "30px",
-                marginRight: "25px",
-              }}
-            >
+            <div className="removeUnderline2">
               <Link className="saznajVise" to="/onama">
                 Saznaj više ➞
               </Link>

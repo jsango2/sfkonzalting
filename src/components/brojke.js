@@ -31,7 +31,7 @@ const Naslov = styled.div`
   text-align: center;
   margin-bottom: 60px;
 
-  @media only screen and (max-width: 450px) {
+  @media only screen and (max-width: 550px) {
     display: none;
   }
 `

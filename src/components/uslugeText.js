@@ -8,9 +8,9 @@ const Wrap = styled.div`
   ${"" /* align-items: center;
   justify-content: center;  */}
   position: relative;
-  width: 90%;
+  width: 86%;
   height: auto;
-  margin: 0 auto;
+  margin: 0 auto 0 auto;
   padding-bottom: 30px;
   @media only screen and (max-width: 550px) {
     margin-top: 40px;
@@ -158,7 +158,7 @@ const UslugeText = () => {
         </div>
         <div
           style={{
-            fontWeight: "300",
+            fontWeight: "400",
             fontSize: "14px",
             width: "89%",
             marginLeft: "10px",
@@ -178,7 +178,7 @@ const UslugeText = () => {
         </div>
         <div
           style={{
-            fontWeight: "300",
+            fontWeight: "400",
             fontSize: "14px",
             width: "89%",
             marginLeft: "25px",
@@ -199,7 +199,7 @@ const UslugeText = () => {
         </div>
         <div
           style={{
-            fontWeight: "300",
+            fontWeight: "400",
             fontSize: "14px",
             width: "89%",
             marginLeft: "10px",
@@ -220,7 +220,7 @@ const UslugeText = () => {
         </Blok2>
         <div
           style={{
-            fontWeight: "300",
+            fontWeight: "400",
             fontSize: "14px",
             width: "89%",
             margin: "21px auto 81px 10px ",
@@ -245,7 +245,7 @@ const UslugeText = () => {
         </Blok2>
         <div
           style={{
-            fontWeight: "300",
+            fontWeight: "400",
             fontSize: "14px",
             width: "89%",
             margin: "21px auto 48px 10px ",

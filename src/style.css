@@ -808,6 +808,17 @@ a:focus {
   text-decoration: none;
   color: #000000;
 }
+.removeUnderline2 {
+  font-weight: 700;
+  font-size: 14px;
+  text-align: end;
+  margin-top: 30px;
+  margin-right: 25px;
+}
+.removeUnderline2 a {
+  text-decoration: none;
+  color: #000000;
+}
 .backgroundMobileMeni {
   position: absolute;
   width: 100%;
@@ -991,6 +1002,13 @@ a:focus {
     top: -50px;
     right: 20px;
     color: rgb(185, 184, 184) !important;
+  }
+  .removeUnderline2 {
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 30px;
+    margin-left: 25px;
   }
 
   /* ----------------------- */

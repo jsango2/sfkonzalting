@@ -8,6 +8,8 @@ import JelenaPdf from "../../content/assets/images/CV_Jelena_Ferrelli.pdf"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import OnamaTriProjekta from "./../components/onamatriprojekta"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const WrapUp = styled.div`
   margin: 0 auto;
@@ -114,7 +116,8 @@ const OnamaPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata?.title || `Title`
 
   return (
-    <Layout location={location} title={siteTitle}>
+    <>
+      <Header />
       <SEO title="O nama" />
       {/* -----------flex sa textom i slikom */}
       <WrapUp>
@@ -202,7 +205,8 @@ const OnamaPage = ({ data, location }) => {
       <OnamaTriProjekta />
 
       {/* ------------tri projekta na koje smo ponosni */}
-    </Layout>
+      <Footer />
+    </>
   )
 }
 

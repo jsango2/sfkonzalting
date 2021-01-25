@@ -141,7 +141,7 @@ const CMSnovostiCarousel = () => {
                   wp_gq_novost {
                     tekstNovosti
                     istaknutaFotografija {
-                      sourceUrl(size: THUMBNAIL)
+                      sourceUrl(size: MEDIUM_LARGE)
                     }
                     sirokaFotografijaUPostu {
                       sourceUrl(size: LARGE)

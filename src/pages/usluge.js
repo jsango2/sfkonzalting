@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import { graphql } from "gatsby"
 import timeline from "../../content/assets/images/uslugeTimeline.svg"
 import Lottie from "lottie-react"
-import LottieDesktop from "../../content/assets/images/Vodoravna.json"
+import LottieDesktop from "../../content/assets/images/Vodoravna tablet.json"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import UslugeText from "../components/uslugeText"
@@ -16,6 +16,8 @@ import photo2 from "../../content/assets/images/2.png"
 import Header from "../components/header"
 
 const MobileHide = styled.div`
+  width: 95%;
+  margin: 50px auto 90px auto;
   @media only screen and (max-width: 550px) {
     display: none;
   }

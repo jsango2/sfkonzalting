@@ -5,12 +5,14 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import CMSizdvojeniProjekti from "./../components/cmsizdvojeniprojekti"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const Wrap = styled.div`
   margin: 0 auto;
   display: flex;
   position: relative;
-  width: 85%;
+  width: 80%;
   justify-content: space-between;
   height: 800px;
   @media only screen and (max-width: 570px) {
@@ -26,10 +28,11 @@ const BlueBox = styled.div`
   position: relative;
   width: 100%;
   justify-content: space-between;
-  height: 280px;
+  height: auto;
   padding-top: 35px;
   padding-right: 35px;
   padding-left: 37px;
+  padding-bottom: 35px;
   color: white;
   background: linear-gradient(
     114.13deg,
@@ -51,7 +54,6 @@ const Lijevo = styled.div`
   justify-content: space-between; */}
   @media only screen and (max-width: 570px) {
     width: 95%;
-  }
   }
 `
 const Desno = styled.div`
@@ -127,7 +129,8 @@ const Objekt = ({ data }) => {
   // --------------------------------------
 
   return (
-    <Layout>
+    <>
+      <Header />
       <SEO
         title={data.wpgraphql.wp_projekt.title}
         description={data.wpgraphql.wp_projekt.wp_gr_projekt.uvodUProjekt}
@@ -213,12 +216,12 @@ const Objekt = ({ data }) => {
                 // marginBottom: "22px",
                 lineHeight: "18px",
               }}
-            >
-              {
-                data.wpgraphql.wp_projekt.wp_gr_projekt
-                  .ulogaSfKonzaltingaUProjektu
-              }
-            </div>
+              dangerouslySetInnerHTML={{
+                __html:
+                  data.wpgraphql.wp_projekt.wp_gr_projekt
+                    .ulogaSfKonzaltingaUProjektu,
+              }}
+            ></div>
           </BlueBox>
         </Lijevo>
         <Desno>
@@ -246,7 +249,8 @@ const Objekt = ({ data }) => {
           <CMSizdvojeniProjekti />
         </div>
       </WrapDoli>
-    </Layout>
+      <Footer />
+    </>
   )
 }
 

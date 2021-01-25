@@ -34,8 +34,9 @@ const CardWrap = styled.div`
       opacity: 1;
     }
   }
-  &:hover .coverPhoto2 {
-    transform: scale(1.03);
+  &:hover .textIzdvojeni {
+    height: 100px;
+    opacity: 1;
   }
   @media only screen and (max-width: 633px) {
     max-width: 100%;

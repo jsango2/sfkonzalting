@@ -6,14 +6,16 @@ import { Link } from "gatsby"
 import SEO from "../components/seo"
 import Layout from "../components/layout"
 import CMSnovostiCarousel from "../components/cmscarouselnovosti"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const Wrap = styled.div`
   margin: 0 auto;
   display: flex;
   position: relative;
-  width: 85%;
+  width: 80%;
   justify-content: space-between;
-  height: 800px;
+  height: auto;
   @media only screen and (max-width: 1100px) {
     ${"" /* width: 940px;
     padding-left: 30px; */}
@@ -53,9 +55,7 @@ const Desno = styled.div`
   ${"" /* display: flex;
   justify-content: space-between; */}
   @media only screen and (max-width: 570px) {
-  width: 95%;
-  
-  }
+    width: 95%;
   }
 `
 const Button = styled.div`
@@ -148,7 +148,8 @@ const Objekt = ({ data }) => {
   // --------------------------------------
 
   return (
-    <Layout>
+    <>
+      <Header />
       <SEO
         title={data.wpgraphql.wp_novost.title}
         description={data.wpgraphql.wp_novost.wp_gq_novost.tekstNovosti}
@@ -201,9 +202,10 @@ const Objekt = ({ data }) => {
               marginBottom: "30px",
               lineHeight: "18px",
             }}
-          >
-            {data.wpgraphql.wp_novost.wp_gq_novost.tekstNovosti}
-          </div>
+            dangerouslySetInnerHTML={{
+              __html: data.wpgraphql.wp_novost.wp_gq_novost.tekstNovosti,
+            }}
+          ></div>
         </Lijevo>
         <Desno>
           <div
@@ -236,7 +238,8 @@ const Objekt = ({ data }) => {
           <CMSnovostiCarousel />
         </div>
       </WrapDoli>
-    </Layout>
+      <Footer />
+    </>
   )
 }
 

@@ -112,7 +112,7 @@ const Footer = () => (
               className="footerLogoM"
               src={logo}
               alt="LogoDom"
-              width="93px"
+              width="73px"
             />
           </Link>
         </WrapLogo>

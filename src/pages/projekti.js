@@ -4,6 +4,8 @@ import styled from "styled-components"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProjektiSve from "../components/projektisve"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const HeroWrap = styled.div`
   display: flex;
@@ -42,7 +44,8 @@ const HeroWrap = styled.div`
 
 const Projekti = ({ data }) => {
   return (
-    <Layout title="Projekti">
+    <>
+      <Header />
       <SEO title="Projekti" />
       <HeroWrap>
         <div style={{ transform: "rotate(180deg)" }}>
@@ -68,7 +71,8 @@ const Projekti = ({ data }) => {
         </div>
       </HeroWrap>
       <ProjektiSve posts={data} />
-    </Layout>
+      <Footer />
+    </>
   )
 }
 

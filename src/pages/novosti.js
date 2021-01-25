@@ -4,6 +4,8 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import NovostiSve from "../components/novostiSve"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 // const Wrap = styled.div`
 //   display: flex;
@@ -57,7 +59,8 @@ const HeroWrap = styled.div`
 
 const Novosti = ({ data }) => {
   return (
-    <Layout title="Novosti">
+    <>
+      <Header />
       <SEO title="Novosti" />
       <HeroWrap>
         <div style={{ transform: "rotate(180deg)" }}>
@@ -83,7 +86,8 @@ const Novosti = ({ data }) => {
         </div>
       </HeroWrap>
       <NovostiSve posts={data} />
-    </Layout>
+      <Footer />
+    </>
   )
 }
 

@@ -43,9 +43,7 @@ const HeroWrap = styled.div`
   }
 `
 const HeroWrapMobile = styled.div`
-  ${"" /* display: flex;
-  align-items: center;
-  justify-content: center; */}
+  position: relative;
   width: 100%;
   padding-top: 38px;
   ${"" /* max-width: 1280px; */}
@@ -120,92 +118,15 @@ const Hero = () => {
         <Lottie
           style={{
             position: "absolute",
-            width: "100%",
-            height: "100%",
-            top: "0px",
+            width: "63%",
+            height: "63%",
+            top: "50%",
+            left: "47%",
+            transform: "translate(-50%, -50%)",
           }}
           animationData={mobileLottie}
         />
 
-        {/* <div
-          style={{
-            display: "flex",
-            color: "white",
-            textAlign: "center",
-            justifyContent: "center",
-            height: "350px",
-          }}
-        >
-          <div>
-            <div
-              className="mobileHeroNaslovi"
-              style={{
-                marginBottom: "45px",
-              }}
-            >
-              Poslovni <br />
-              planovi
-            </div>
-            <div
-              className="mobileHeroNaslovi"
-              style={{
-                marginBottom: "45px",
-                animationDelay: "0.6s",
-              }}
-            >
-              EU i nacionalni <br />
-              projekti
-            </div>
-            <div
-              className="mobileHeroNaslovi"
-              style={{
-                animationDelay: "1.2s",
-              }}
-            >
-              Cost benefit
-              <br /> analize
-            </div>
-          </div>
-          <div className="scale-in-ver-top lineGrow"></div>
-          <div style={{ position: "relative", top: "55px" }}>
-            <div
-              className="mobileHeroNaslovi"
-              style={{
-                marginBottom: "55px",
-                animationDelay: "0.3s",
-              }}
-            >
-              Izobrazba
-            </div>
-            <div
-              className="mobileHeroNaslovi"
-              style={{
-                marginBottom: "55px",
-                animationDelay: "0.9s",
-              }}
-            >
-              Poslovno <br />
-              savjetovanje
-            </div>
-            <div
-              className="mobileHeroNaslovi"
-              style={{
-                animationDelay: "1.5s",
-              }}
-            >
-              Investicijske <br />
-              studije
-            </div>
-          </div>
-        </div>
-        <LogoMob
-          className="mobileHeroNaslovi"
-          style={{
-            animationDelay: "2.2s",
-          }}
-        >
-          <img src={logo} alt="logo" width="100%" />
-        </LogoMob> */}
         <div
           style={{
             position: "absolute",

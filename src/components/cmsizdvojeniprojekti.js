@@ -140,7 +140,7 @@ const CMSizdvojeniProjekti = props => {
                     ulogaSfKonzaltingaUProjektu
                     uvodUProjekt
                     istaknutaSlika {
-                      sourceUrl(size: THUMBNAIL)
+                      sourceUrl(size: MEDIUM_LARGE)
                     }
                     sirokaFotografijaUPostu {
                       sourceUrl(size: LARGE)
