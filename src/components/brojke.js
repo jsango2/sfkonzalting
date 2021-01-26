@@ -1,10 +1,11 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const OnamaWrap = styled.div`
   width: 80%;
   height: auto;
+  min-height: 400px;
   margin: 30px auto 60px auto;
   @media only screen and (max-width: 450px) {
     padding-top: 69px;
@@ -69,9 +70,6 @@ const Krug = styled.div`
     font-size: 14px;
     line-height: 16.4px;
   }
-  ${"" /* &:hover {
-    transform: scale(1.1);
-  } */}
 `
 const Button = styled.div`
   cursor: pointer;
@@ -90,14 +88,7 @@ const Button = styled.div`
   text-decoration: none;
   margin: 0 auto;
 
-  ${
-    "" /* @media only screen and (max-width: 1000px) {
-    marginleft: 108px;
-  }
-  @media only screen and (max-width: 768px) {
-    margin-bottom: 54px;
-    margin-left: 15%;
-  } */
+
   }
   @media only screen and (max-width: 450px) {
     display: none;

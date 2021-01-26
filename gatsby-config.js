@@ -5,11 +5,11 @@ module.exports = {
       name: `Sutra.hr`,
       summary: `Web Dev`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsby-starter-blog-demo.netlify.app/`,
-    social: {
-      twitter: `kylemathews`,
-    },
+    description: `Savjetovanja, izrada poslovnih planova, investicijskih studija, cost benefit analiza i ostale dokumentacije. Priprema za HAMAG BICRO, HBOR. EU i nacionalni projekti. Poslovno savjetovanje i izobrazba `,
+    siteUrl: `https://wwww.sfkonzalting.hr`,
+    image: "../../content/assets/images/SF konz logo.svg",
+    keywords:
+      "Savjetovanje, Izrada poslovnih planova, Investicijske studije, cost benefit analiza, HBOR, HAMAG BICRO, EU projekti, Izobrazba, Poslovno savjetovanje",
   },
   plugins: [
     {

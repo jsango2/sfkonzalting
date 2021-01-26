@@ -10,7 +10,6 @@ import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 const Naslov = styled.div`
   font-size: 32px;
   font-weight: 300;
-  ${"" /* width: 100%; */}
   height: auto;
   margin-left: 129px;
   margin-bottom: 30px;
@@ -23,10 +22,17 @@ const Naslov = styled.div`
     text-align: center;
   }
 `
+const WrappAll = styled.div`
+  height: 500px;
+  margin-bottom: 40px;
+  @media only screen and (max-width: 570px) {
+  }
+`
 const Wrap = styled.div`
   width: 1230px;
   min-width: 330px;
   margin: 0 auto;
+  height: 345px;
   @media only screen and (max-width: 1100px) {
     width: 900px;
   }
@@ -153,11 +159,11 @@ const CMSizdvojeniProjekti = props => {
         }
       `}
       render={data => (
-        <>
-          <Naslov>{props.naslov}</Naslov>
+        <WrappAll>
+          <Naslov style={{ marginTop: "70px" }}>{props.naslov}</Naslov>
           <Wrap>
             <Slider {...settings}>
-              {data.wpgraphql.wp_projekti.edges.map(projekt => (
+              {data.wpgraphql.wp_projekti.edges.slice(0, 12).map(projekt => (
                 <CMSizdvojeniCard
                   key={projekt.node.id}
                   date={projekt.node.date}
@@ -177,7 +183,7 @@ const CMSizdvojeniProjekti = props => {
               ))}
             </Slider>
           </Wrap>
-        </>
+        </WrappAll>
       )}
     ></StaticQuery>
   )

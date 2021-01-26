@@ -7,8 +7,8 @@ class MapboxFile extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      lng: 15.234627454886867,
-      lat: 44.11,
+      lng: 15.235267454886867,
+      lat: 44.12542,
       zoom: 13,
     }
   }

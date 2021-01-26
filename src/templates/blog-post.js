@@ -3,7 +3,6 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import { Link } from "gatsby"
 import SEO from "../components/seo"
-import Layout from "../components/layout"
 import CMSizdvojeniProjekti from "./../components/cmsizdvojeniprojekti"
 import Header from "../components/header"
 import Footer from "../components/footer"
@@ -14,7 +13,8 @@ const Wrap = styled.div`
   position: relative;
   width: 80%;
   justify-content: space-between;
-  height: 800px;
+  height: auto;
+  padding-bottom: 60px;
   @media only screen and (max-width: 570px) {
     flex-direction: column;
     height: auto;
@@ -23,8 +23,6 @@ const Wrap = styled.div`
   }
 `
 const BlueBox = styled.div`
-  ${"" /* margin: 0 auto;
-  display: flex; */}
   position: relative;
   width: 100%;
   justify-content: space-between;
@@ -44,26 +42,20 @@ const BlueBox = styled.div`
   );
 `
 const Lijevo = styled.div`
-  ${"" /* margin: 0 auto; */}
   width: 47%;
   padding-top: 53px;
-  ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   background-color: white;
-  ${"" /* display: flex;
-  justify-content: space-between; */}
+
   @media only screen and (max-width: 570px) {
     width: 95%;
   }
 `
 const Desno = styled.div`
-  ${"" /* margin: 0 auto; */}
   width: 47%;
-  ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   padding-top: 53px;
-  ${"" /* display: flex;
-  justify-content: space-between; */}
+
   @media only screen and (max-width: 570px) {
     width: 95%;
   }
@@ -88,22 +80,10 @@ const Button = styled.div`
   font-weight: 300;
   font-size: 22px;
   text-decoration: none;
-
-  ${
-    "" /* @media only screen and (max-width: 570px) {
-    marginleft: 108px;
-  } */
-  }
 `
 const WrapDoli = styled.div`
-  ${
-    "" /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  }
   width: 100%;
-  height: 550px;
+  height: 600px;
   padding-top: 50px;
   padding-bottom: 86px;
   background: rgba(196, 196, 196, 0.1);
@@ -113,14 +93,12 @@ const WrapDoli = styled.div`
 `
 const Naslov = styled.div`
   font-size: 32px;
-  width: 100%;
+  width: 90%;
   height: auto;
   text-align: center;
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
 
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 

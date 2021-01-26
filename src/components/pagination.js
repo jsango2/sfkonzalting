@@ -8,10 +8,10 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
     pageNumbers.push(i)
     console.log(i)
   }
-  const ActiveStyles = {
-    color: "black",
-    fontWeight: "700",
-  }
+  // const ActiveStyles = {
+  //   color: "black",
+  //   fontWeight: "700",
+  // }
 
   return (
     <nav className="paginationWrap">

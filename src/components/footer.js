@@ -71,11 +71,7 @@ const WrapFooterText = styled.div`
   margin: 0 auto;
   text-align: center;
 `
-const SocMreze = styled.div`
-  ${"" /* @media only screen and (max-width: 850px) {
-    display: none;
-  } */}
-`
+
 const SocMrezeMob = styled.div`
   position: absolute;
   bottom: 130px;
@@ -92,11 +88,14 @@ const TextSF = styled.div`
   font-weight: 300;
   font-size: 18px;
   margin-top: 28px;
-  margin-bottom: 112px;
+  margin-bottom: 116px;
   line-height: 23px;
   letter-spacing: 0.035em;
 
   @media only screen and (max-width: 735px) {
+    font-size: 12px;
+    margin-top: 28px;
+    line-height: 17px;
     margin-bottom: 25px;
   }
 `
@@ -147,19 +146,11 @@ const Footer = () => (
               />
             </a>
           </SocMrezeMob>
-          <div
-            style={{
-              color: "white",
-              fontWeight: "300",
-              fontSize: "18px",
-              marginTop: "21px",
-              letterSpacing: "0.035em",
-            }}
-          >
+          <TextSF style={{ marginBottom: "8px" }}>
             Copyright © 2021 SF konzalting. All rights reserved.
             <br />
             Web development by <strong>sutra.hr</strong>
-          </div>
+          </TextSF>
         </WrapFooterText>
       </WrapFlex>
     </WrapIn>

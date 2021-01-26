@@ -1,15 +1,8 @@
 import { Link } from "gatsby"
 import React, { useState, useEffect } from "react"
 import styled from "styled-components"
-import cardphoto from "../../content/assets/images/cmscard.png"
 
 const CardWrap = styled.div`
-  ${
-    "" /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  }
   max-width: 280px;
   width: 245px;
   min-width: 230px;
@@ -17,8 +10,7 @@ const CardWrap = styled.div`
   margin-left: 8px;
   margin-right: 8px;
   animation: fade-in 1s ease-out both;
-  ${"" /* margin-left: 10px;
-  margin-right: 10px; */}
+
   @-webkit-keyframes fade-in {
     0% {
       opacity: 0;

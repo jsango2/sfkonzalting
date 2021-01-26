@@ -1,22 +1,19 @@
 import React, { Component } from "react"
 
 import { graphql } from "gatsby"
-import timeline from "../../content/assets/images/uslugeTimeline.svg"
 import Lottie from "lottie-react"
 import LottieDesktop from "../../content/assets/images/Vodoravna tablet.json"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import UslugeText from "../components/uslugeText"
 import PhotoGrid from "../components/photogrid"
 import styled from "styled-components"
 import PhotoGridMob from "../components/photogridmob"
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
-import photo1 from "../../content/assets/images/1.png"
-import photo2 from "../../content/assets/images/2.png"
+
 import Header from "../components/header"
+import Footer from "../components/footer"
 
 const MobileHide = styled.div`
-  width: 95%;
+  width: 90%;
   margin: 50px auto 90px auto;
   @media only screen and (max-width: 550px) {
     display: none;
@@ -33,6 +30,7 @@ class usluge extends Component {
           <Lottie
             style={{ width: "88%", margin: "0 auto", opacity: "0.6" }}
             animationData={LottieDesktop}
+            loop={false}
           />
         </MobileHide>
 
@@ -41,6 +39,7 @@ class usluge extends Component {
         <PhotoGrid />
 
         <PhotoGridMob />
+        <Footer />
       </>
     )
   }

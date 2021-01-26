@@ -71,15 +71,9 @@ const WrapFooterText = styled.div`
   margin: 0 auto;
   text-align: center;
 `
-const SocMreze = styled.div`
-  ${"" /* @media only screen and (max-width: 850px) {
-    display: none;
-  } */}
-`
 const SocMrezeMob = styled.div`
   margin-top: 20px;
   @media only screen and (max-width: 735px) {
-    ${"" /* display: none; */}
   }
 `
 

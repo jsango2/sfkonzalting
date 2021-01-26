@@ -7,22 +7,40 @@ import { AiOutlineClose } from "react-icons/ai"
 const Wrap = styled.div`
   position: fixed;
   top: 0;
-  height: 100%;
+  height: 115%;
   width: 100%;
   z-index: 99999;
 `
 const Logo = styled.div`
   position: relative;
   width: 136px;
-  ${
-    "" /* @media only screen and (max-width: 1000px) {
-    margin: 0 50px;
-    width: 180px;
-  } */
-  }
 `
 
 export const MeniMobile = ({ handleClick, isOpen, pozadina }) => {
+  const [isHorizontal, setIsHorizontal] = useState(false)
+  useEffect(() => {
+    var mql = window.matchMedia("(orientation: portrait)")
+
+    // If there are matches, we're in portrait
+    if (mql.matches) {
+      setIsHorizontal(false)
+    } else {
+      setIsHorizontal(true)
+    }
+
+    window.addEventListener("resize", functionName)
+
+    function functionName() {
+      if (window.innerWidth > window.innerHeight) {
+        setIsHorizontal(true)
+      }
+
+      if (window.innerWidth < window.innerHeight) {
+        setIsHorizontal(false)
+      }
+    }
+  }, [])
+
   return (
     <Wrap className={`${isOpen ? "show-menu" : "hide-menu"} `}>
       <AiOutlineClose
@@ -42,6 +60,7 @@ export const MeniMobile = ({ handleClick, isOpen, pozadina }) => {
       />
       <div
         style={{
+          position: "relative",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
@@ -54,31 +73,40 @@ export const MeniMobile = ({ handleClick, isOpen, pozadina }) => {
             <img src={logo} alt="logo" width="100%" />
           </Logo>
         </Link>
-
-        <Link
-          className="mobileLinks"
-          to="/usluge"
-          onClick={() => handleClick()}
+        <div
+          className={`${
+            isHorizontal ? "wrapLinksMobileHorizontal" : "wrapLinksMobile"
+          }`}
         >
-          USLUGE
-        </Link>
-        <Link
-          className="mobileLinks"
-          to="/novosti"
-          onClick={() => handleClick()}
-        >
-          NOVOSTI
-        </Link>
-        <Link
-          className="mobileLinks"
-          to="/projekti"
-          onClick={() => handleClick()}
-        >
-          PROJEKTI
-        </Link>
-        <Link className="mobileLinks" to="/onama" onClick={() => handleClick()}>
-          O NAMA
-        </Link>
+          <Link
+            className="mobileLinks"
+            to="/usluge"
+            onClick={() => handleClick()}
+          >
+            USLUGE
+          </Link>
+          <Link
+            className="mobileLinks"
+            to="/novosti"
+            onClick={() => handleClick()}
+          >
+            NOVOSTI
+          </Link>
+          <Link
+            className="mobileLinks"
+            to="/projekti"
+            onClick={() => handleClick()}
+          >
+            PROJEKTI
+          </Link>
+          <Link
+            className="mobileLinks"
+            to="/onama"
+            onClick={() => handleClick()}
+          >
+            O NAMA
+          </Link>
+        </div>
       </div>
     </Wrap>
   )

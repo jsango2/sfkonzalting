@@ -13,6 +13,7 @@ const Wrap = styled.div`
   margin: 0 auto 0 auto;
   padding-bottom: 30px;
   @media only screen and (max-width: 550px) {
+    width: 100%;
     margin-top: 40px;
     flex-direction: column;
   }
@@ -27,7 +28,7 @@ const StupacLijevo = styled.div`
   margin: 0 auto;
   ${"" /* z-index: 1; */}
   @media only screen and (max-width: 550px) {
-    width: 90%;
+    width: 100%;
   }
 `
 
@@ -50,7 +51,7 @@ const StupacDesno = styled.div`
   margin: 0 auto;
 
   @media only screen and (max-width: 550px) {
-    width: 90%;
+    width: 100%;
   }
 `
 const Blok1 = styled.div`
@@ -128,7 +129,8 @@ const Button = styled.div`
   text-decoration: none;
 
   @media only screen and (max-width: 550px) {
-    margin-bottom: 40px;
+    margin: 0 auto 40px auto;
+    width: 90%;
   }
 `
 
@@ -142,30 +144,12 @@ const UslugeText = () => {
             analiza
           </BlokTekst>
         </Blok1>
-        <div
-          style={{
-            fontWeight: "700",
-            fontSize: "14px",
-            width: "89%",
-            marginLeft: "10px",
-            marginTop: "29px",
-            lineHeight: "18px",
-          }}
-        >
+        <div className="paragrafUsluge bold">
           Pružamo usluge savjetovanja i pronalaska najbolje opcije financiranja
           te izradu poslovnih planova, investicijskih studija, CBA analiza i
           ostale cjelokupne popratne dokumentacije.
         </div>
-        <div
-          style={{
-            fontWeight: "400",
-            fontSize: "14px",
-            width: "89%",
-            marginLeft: "10px",
-            marginTop: "25px",
-            lineHeight: "18px",
-          }}
-        >
+        <div className="paragrafUsluge">
           Izrada poslovnog plana ili investicijske studije kod HAMAG BICRO,
           HBOR-a, poslovnih banaka te ostalih investitora je jedan od osnovnih
           preduvjeta ostvarivanja kredita banke ili dobivanja bespovratnih
@@ -176,16 +160,7 @@ const UslugeText = () => {
           sredstava, do sada smo izradili smo preko 60 poslovnih planova i
           investicijskih studija čime smo poduzetnicima omogućili:
         </div>
-        <div
-          style={{
-            fontWeight: "400",
-            fontSize: "14px",
-            width: "89%",
-            marginLeft: "25px",
-            marginTop: "21px",
-            lineHeight: "18px",
-          }}
-        >
+        <div className="paragrafUsluge uvuceno">
           - kupnju i opremanje poslovnih prostora,
           <br /> - izgradnju ili adaptaciju proizvodno-poslovnih prostora,
           <br /> - nabavku mehanizacije, strojeva i opreme,
@@ -197,17 +172,7 @@ const UslugeText = () => {
           infrastrukture i legalizaciju poslovnih objekata,
           <br /> - restrukturiranje poslovanja - mnoštvo ostalih aktivnosti.
         </div>
-        <div
-          style={{
-            fontWeight: "400",
-            fontSize: "14px",
-            width: "89%",
-            marginLeft: "10px",
-            marginBottom: "60px",
-            marginTop: "21px",
-            lineHeight: "18px",
-          }}
-        >
+        <div className="paragrafUsluge marginBottom">
           U dinamičnom okruženju te novim izazovima na tržištu s kojima se
           svakodnevno susrećemo, osim tradicionalnih alata, prepoznali smo
           potrebu tržišta te prilagodili svoje poslovanje online izradi
@@ -218,15 +183,7 @@ const UslugeText = () => {
         <Blok2>
           <BlokTekst>Izrada EU i nacionalnih projekata</BlokTekst>
         </Blok2>
-        <div
-          style={{
-            fontWeight: "400",
-            fontSize: "14px",
-            width: "89%",
-            margin: "21px auto 81px 10px ",
-            lineHeight: "18px",
-          }}
-        >
+        <div className="paragrafUsluge marginBottom">
           Sudjelujemo u razvoju projektne ideje te sudjelujemo u pripremi i
           provedbi projekata .
           <br />
@@ -243,16 +200,7 @@ const UslugeText = () => {
           {" "}
           <BlokTekst>Poslovno savjetovanje i izobrazba</BlokTekst>
         </Blok2>
-        <div
-          style={{
-            fontWeight: "400",
-            fontSize: "14px",
-            width: "89%",
-            margin: "21px auto 48px 10px ",
-
-            lineHeight: "18px",
-          }}
-        >
+        <div className="paragrafUsluge marginBottom">
           Usmjeravamo poduzetnike prilikom širenja poslovanja, investiranja,
           optimizacije poslovnih procesa. Pružamo usluge poslovnog savjetovanja
           i izobrazbe vezano za poslovanje (širenje poslovanja, pokretanje

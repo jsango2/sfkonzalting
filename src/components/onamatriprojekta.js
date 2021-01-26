@@ -1,16 +1,9 @@
 import React from "react"
 import styled from "styled-components"
 import { graphql, StaticQuery } from "gatsby"
-import CMSizdvojeniCard from "./cmsizdvojenicard"
 import CMSizdvojeniCardMobLayout from "./cmsizdvojenicardmoblayout"
 
 const Wrap = styled.div`
-  ${
-    "" /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  }
   width: 100%;
   min-height: 550px;
   padding-top: 50px;
@@ -22,14 +15,12 @@ const Wrap = styled.div`
 `
 const Naslov = styled.div`
   font-size: 32px;
-  width: 100%;
+  width: 90%;
   height: auto;
   text-align: center;
-  margin-bottom: 50px;
+  margin: 0 auto 50px auto;
 
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 const WrapProjekti = styled.div`
@@ -40,8 +31,6 @@ const WrapProjekti = styled.div`
   margin: 0 auto 40px auto;
 
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 
@@ -79,7 +68,7 @@ const OnamaTriProjekta = ({ data }) => {
         <Wrap>
           <Naslov>Tri projekta na koje smo posebno ponosni</Naslov>
           <WrapProjekti>
-            {data.wpgraphql.wp_projekti.edges.map(projekt => (
+            {data.wpgraphql.wp_projekti.edges.slice(0, 3).map(projekt => (
               <CMSizdvojeniCardMobLayout
                 key={projekt.node.id}
                 date={projekt.node.date}

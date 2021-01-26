@@ -73,8 +73,8 @@ const Header = () => {
       <MeniMobile handleClick={handleClick} isOpen={isOpen} pozadina={image} />
       <Headroom
         disableInlineStyles
-        onPin={() => console.log("pinned")}
-        onUnpin={() => console.log("unpinned")}
+        // onPin={() => console.log("pinned")}
+        // onUnpin={() => console.log("unpinned")}
         style={{
           zIndex: "9999",
         }}

@@ -1,34 +1,17 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import NovostiSve from "../components/novostiSve"
 import Header from "../components/header"
 import Footer from "../components/footer"
 
-// const Wrap = styled.div`
-//   display: flex;
-//   ${"" /* ${"" /* align-items: center; */} */}
-//   flex-wrap: wrap;
-//   justify-content: space-between;
-//   margin: 60px auto 85px auto;
-
-//   ${"" /* padding-left: 17px; */}
-//   ${"" /* padding-bottom: 86px;  */}
-//   width: 1020px;
-//   @media only screen and (max-width: 60em) {
-//     ${"" /* display: block;
-//     padding: 0 0; */}
-//   }
-// `
 const HeroWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
   color: white;
-  ${"" /* max-width: 1280px; */}
   height: 222px;
   transform: rotate(-180deg);
   background: linear-gradient(
@@ -52,8 +35,6 @@ const HeroWrap = styled.div`
     #7794b1 112.81%
   );
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 

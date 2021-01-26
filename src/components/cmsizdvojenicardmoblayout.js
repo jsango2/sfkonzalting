@@ -1,14 +1,8 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const CardWrap = styled.div`
-  ${
-    "" /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  }
   position: relative;
   z-index: 500;
   width: 245px;
@@ -16,8 +10,7 @@ const CardWrap = styled.div`
   margin-left: 8px;
   margin-right: 8px;
   margin-bottom: 30px;
-  ${"" /* padding-left: 17px; */}
-  ${"" /* padding-bottom: 86px;  */}
+
   transition: max-height 0.5s;
 
   &:hover .textIzdvojeni {
@@ -28,7 +21,7 @@ const CardWrap = styled.div`
     margin-left: 8px;
     margin-right: 8px;
     min-width: 90vw;
-    height: 280px;
+    height: 345px;
     margin-top: 10px;
     background-color: rgb(245, 245, 245);
   }
@@ -47,8 +40,6 @@ const Text = styled.div`
   height: 0;
 
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 const Naslov = styled.div`
@@ -63,8 +54,7 @@ const Naslov = styled.div`
   text-transform: uppercase;
 }
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+
   }
 `
 const WrapText = styled.div`
@@ -74,15 +64,12 @@ const WrapText = styled.div`
   justify-content: flex-end;
   width: 100%;
   height: 100%;
-  ${"" /* bottom: -155px;
-  left: 15px; */}
-  padding-left:15px;
+
+  padding-left: 15px;
   padding-bottom: 23px;
   z-index: 20;
 
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 

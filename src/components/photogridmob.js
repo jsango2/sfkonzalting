@@ -1,19 +1,13 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import { Parallax, ParallaxLayer } from "react-spring/renderprops-addons"
-import photo1 from "../../content/assets/images/1.png"
-import photo2 from "../../content/assets/images/2.png"
-import photo3 from "../../content/assets/images/3.png"
-import photo4 from "../../content/assets/images/4.png"
-import Footer from "./footer"
-import FooterSocMreze from "./footerSocMreze"
+import photo1 from "../../content/assets/images/p1.jpg"
+import photo2 from "../../content/assets/images/p2.jpg"
+import photo3 from "../../content/assets/images/p3.jpg"
+import photo4 from "../../content/assets/images/p4.jpg"
 
 const PhotoWrap = styled.div`
   width: 100%;
-
-  ${"" /* padding-top: 86px;
-  padding-bottom: 86px; */}
-  height: 1400px;
+  height: 1200px;
   @media only screen and (min-width: 550px) {
     display: none;
   }
@@ -32,6 +26,7 @@ class PhotoGridMob extends Component {
             backgroundImage: `url(${photo1})`,
             backgroundPosition: "center",
             backgroundSize: "cover ",
+            filter: "grayscale(100%)",
             zIndex: "1",
           }}
         />
@@ -44,6 +39,8 @@ class PhotoGridMob extends Component {
             backgroundImage: `url(${photo2})`,
             backgroundPosition: "center",
             backgroundSize: "cover ",
+            filter: "grayscale(100%)",
+
             zIndex: "1",
           }}
         />
@@ -56,6 +53,8 @@ class PhotoGridMob extends Component {
             backgroundImage: `url(${photo3})`,
             backgroundPosition: "center",
             backgroundSize: "cover ",
+            filter: "grayscale(100%)",
+
             zIndex: "1",
           }}
         />
@@ -67,6 +66,8 @@ class PhotoGridMob extends Component {
             backgroundImage: `url(${photo4})`,
             backgroundPosition: "center",
             backgroundSize: "cover ",
+            filter: "grayscale(100%)",
+
             zIndex: "1",
           }}
         />
@@ -77,7 +78,7 @@ class PhotoGridMob extends Component {
             zIndex: "1",
           }}
         >
-          <FooterSocMreze />
+          {/* <FooterSocMreze /> */}
         </div>
       </PhotoWrap>
     )

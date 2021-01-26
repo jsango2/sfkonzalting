@@ -10,6 +10,7 @@ const Wrap = styled.div`
   ${"" /* flex-direction: column; */}
   width: 1230px;
   margin: 0 auto;
+  height: auto;
   @media only screen and (max-width: 1100px) {
     width: 100%;
   }
@@ -73,7 +74,9 @@ const Text = styled.div`
   @media only screen and (max-width: 727px) {
     height: auto;
     width: 100%;
+    min-width: 340px;
     padding: 30px;
+    margin-bottom: 30px;
   }
 `
 const Paragraf = styled.div`

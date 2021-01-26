@@ -5,7 +5,6 @@ import onama from "../../content/assets/images/onama.png"
 import ZeljkaPdf from "../../content/assets/images/CV_Zeljka_Smoljan.pdf"
 import JelenaPdf from "../../content/assets/images/CV_Jelena_Ferrelli.pdf"
 
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import OnamaTriProjekta from "./../components/onamatriprojekta"
 import Header from "../components/header"
@@ -13,22 +12,22 @@ import Footer from "../components/footer"
 
 const WrapUp = styled.div`
   margin: 0 auto;
-  width: 85%;
+  width: 80%;
   margin-top: 60px;
   margin-bottom: 60px;
-  ${"" /* padding: 1.85rem 0; */}
   min-height: 534px;
   display: flex;
   justify-content: space-between;
+  @media only screen and (max-width: 780px) {
+    width: 100%;
+  }
   @media only screen and (max-width: 575px) {
     margin-top: 30px;
     flex-direction: column-reverse;
   }
 `
 const Lijevo = styled.div`
-  ${"" /* margin: 0 auto; */}
   width: 48%;
-  ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   background-color: white;
   @media only screen and (max-width: 575px) {
@@ -36,9 +35,7 @@ const Lijevo = styled.div`
   }
 `
 const Desno = styled.div`
-  ${"" /* margin: 0 auto; */}
   width: 48%;
-  ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   background-color: white;
 
@@ -77,10 +74,6 @@ const Blok1 = styled.div`
     #eba8c1 126.4%
   );
   transform: rotate(180deg);
-  ${"" /* z-index: 1; */}
-  ${"" /* @media only screen and (max-width: 48em) {
-    height: 495px;
-  } */}
 `
 const Button = styled.div`
   cursor: pointer;
@@ -97,24 +90,25 @@ const Button = styled.div`
   font-weight: 300;
   font-size: 22px;
   text-decoration: none;
-  ${"" /* margin: 0 auto 0 130px; */}
-  ${
-    "" /* @media only screen and (max-width: 1000px) {
-    marginleft: 108px;
+  @media only screen and (max-width: 780px) {
+    margin-left: 25px;
+    width: 90%;
   }
-  @media only screen and (max-width: 768px) {
-    margin-bottom: 54px;
-    margin-left: 15%;
-  }
-  @media only screen and (max-width: 420px) {
+`
+const Paragraf = styled.div`
+  font-weight: 400;
+  font-size: 14px;
+  width: 89%;
+  margin-left: 10px;
+  margin-top: 29px;
+  line-height: 18px;
 
-  } */
+  @media only screen and (max-width: 780px) {
+    margin-left: 25px;
   }
 `
 
 const OnamaPage = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
-
   return (
     <>
       <Header />
@@ -133,16 +127,7 @@ const OnamaPage = ({ data, location }) => {
               Dugogodišnje prijateljstvo i iskustvo pretvoreno u partnerstvo
             </div>
           </Blok1>
-          <div
-            style={{
-              fontWeight: "400",
-              fontSize: "14px",
-              width: "89%",
-              marginLeft: "10px",
-              marginTop: "29px",
-              lineHeight: "18px",
-            }}
-          >
+          <Paragraf>
             Prijateljstvo koje traje duže od 30 godina okrunjeno je poslovnom
             suradnjom baziranoj na profesionalnosti, odgovornosti, te međusobnom
             poštovanju i povjerenju te predstavlja ujedno i kvalitetu koju
@@ -153,8 +138,9 @@ const OnamaPage = ({ data, location }) => {
             uspostavama novih odjela, radom u privatnom, neprofitnom, javnom i
             državnom sektoru je temelj garancije našeg znanja koje dijelimo s
             Vama.
-          </div>
+          </Paragraf>
           <div
+            className="pdffile"
             style={{
               fontWeight: "700",
               fontSize: "14px",
@@ -169,6 +155,7 @@ const OnamaPage = ({ data, location }) => {
             </a>
           </div>
           <div
+            className="pdffile"
             style={{
               fontWeight: "700",
               fontSize: "14px",

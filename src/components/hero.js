@@ -5,7 +5,6 @@ import Lottie from "lottie-react"
 import lijevoLottie from "../../content/assets/images/lijeva strana.json"
 import desnoLottie from "../../content/assets/images/desna strana.json"
 import mobileLottie from "../../content/assets/images/mob anim reg slow 07.json"
-import Projekti from "./../pages/projekti"
 import { Link } from "gatsby"
 
 const HeroWrap = styled.div`
@@ -13,7 +12,6 @@ const HeroWrap = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  ${"" /* max-width: 1280px; */}
   height: 476px;
   background: linear-gradient(
     114.13deg,
@@ -46,7 +44,6 @@ const HeroWrapMobile = styled.div`
   position: relative;
   width: 100%;
   padding-top: 38px;
-  ${"" /* max-width: 1280px; */}
   height: 810px;
   background: linear-gradient(
     27.6deg,
@@ -70,11 +67,7 @@ const Logo = styled.div`
     width: 180px;
   }
 `
-const LogoMob = styled.div`
-  position: relative;
-  margin: 20px auto;
-  width: 124px;
-`
+
 const Button = styled.div`
   cursor: pointer;
   display: flex;
@@ -125,6 +118,7 @@ const Hero = () => {
             transform: "translate(-50%, -50%)",
           }}
           animationData={mobileLottie}
+          loop={false}
         />
 
         <div
@@ -142,11 +136,12 @@ const Hero = () => {
         </div>
       </HeroWrapMobile>
       <HeroWrap>
-        <Lottie animationData={lijevoLottie} />
+        <Lottie animationData={lijevoLottie} loop={false} />
         <Logo>
           <img src={logo} alt="logo" width="100%" />
         </Logo>
-        <Lottie animationData={desnoLottie} />
+
+        <Lottie animationData={desnoLottie} loop={false} />
       </HeroWrap>
     </>
   )

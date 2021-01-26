@@ -1,13 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import Footer from "./footer"
 
 const PhotoWrap = styled.div`
   width: 100%;
-
-  ${"" /* padding-top: 86px;
-  padding-bottom: 86px; */}
-
+  margin-bottom: 1px;
   @media only screen and (max-width: 550px) {
     display: none;
   }
@@ -29,7 +25,6 @@ const PhotoGrid = () => {
           <div id="9" className="_9 w-node-a85ebd1473de-7a98c21f"></div>
         </div>
       </PhotoWrap>
-      <Footer />
     </>
   )
 }

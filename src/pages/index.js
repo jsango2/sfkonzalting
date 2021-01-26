@@ -1,6 +1,5 @@
 import React, { useRef } from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import CTAusluge from "./../components/ctausluge"
@@ -17,7 +16,6 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 
 const BlogIndex = ({ data, location }) => {
-  const siteTitle = data.site.siteMetadata?.title || `Title`
   // ------visibility lazy loading------------
 
   const halfPage = useRef()
@@ -35,7 +33,7 @@ const BlogIndex = ({ data, location }) => {
   return (
     <>
       <Header />
-      <SEO title="All posts" />
+      <SEO title="Početna" />
 
       <Hero />
       <CTAusluge />

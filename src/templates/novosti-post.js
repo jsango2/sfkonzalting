@@ -4,7 +4,6 @@ import styled from "styled-components"
 import { Link } from "gatsby"
 
 import SEO from "../components/seo"
-import Layout from "../components/layout"
 import CMSnovostiCarousel from "../components/cmscarouselnovosti"
 import Header from "../components/header"
 import Footer from "../components/footer"
@@ -152,7 +151,7 @@ const Objekt = ({ data }) => {
       <Header />
       <SEO
         title={data.wpgraphql.wp_novost.title}
-        description={data.wpgraphql.wp_novost.wp_gq_novost.tekstNovosti}
+        description={data.wpgraphql.wp_novost.wp_gq_novost.title}
       />
       <div
         style={{

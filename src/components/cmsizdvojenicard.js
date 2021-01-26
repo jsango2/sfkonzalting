@@ -1,18 +1,12 @@
 import { Link } from "gatsby"
-import React, { useState } from "react"
+import React from "react"
 import styled from "styled-components"
 
 const CardWrap = styled.div`
-  ${
-    "" /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column; */
-  }
   max-width: 280px;
   width: 245px;
   min-width: 230px;
-  height: 316px;
+  height: 345px;
   margin-left: 8px;
   margin-right: 8px;
   animation: fade-in 1s ease-out both;
@@ -39,8 +33,10 @@ const CardWrap = styled.div`
     opacity: 1;
   }
   @media only screen and (max-width: 633px) {
+    height: 345px;
     max-width: 100%;
     width: 100%;
+    ${"" /* margin-bottom: 30px; */}
   }
 `
 const Text = styled.div`
@@ -57,8 +53,6 @@ const Text = styled.div`
   height: 0;
 
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 const Naslov = styled.div`
@@ -73,8 +67,7 @@ const Naslov = styled.div`
   text-transform: uppercase;
 }
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
+
   }
 `
 const WrapText = styled.div`
@@ -83,16 +76,13 @@ const WrapText = styled.div`
   flex-direction: column;
   justify-content: flex-end;
   width: 100%;
-  height: 100%;
-  ${"" /* bottom: -155px;
-  left: 15px; */}
-  padding-left:15px;
+  min-height: 345px;
+
+  padding-left: 15px;
   padding-bottom: 23px;
   z-index: 20;
 
   @media only screen and (max-width: 60em) {
-    ${"" /* display: block;
-    padding: 0 0; */}
   }
 `
 
@@ -106,6 +96,7 @@ const CMSizdvojeniCard = props => {
             width: "100%",
             height: "100%",
             backgroundImage: `url(${props.fotoFront})`,
+            top: "0",
             backgroundPosition: "center",
             backgroundSize: "cover ",
             zIndex: "25",
