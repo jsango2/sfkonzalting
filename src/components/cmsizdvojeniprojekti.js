@@ -134,7 +134,7 @@ const CMSizdvojeniProjekti = props => {
       query={graphql`
         {
           wpgraphql {
-            wp_projekti {
+            wp_projekti (first: 12){
               edges {
                 node {
                   id
