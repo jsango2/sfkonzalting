@@ -222,9 +222,14 @@ const Objekt = ({ data }) => {
               zIndex: "1",
             }}
           ></div>
-          <Link to="/uslugePage" style={{ textDecoration: "none" }}>
-            <Button className="button">POŠALJITE UPIT</Button>
-          </Link>
+          <Button className="button">
+            <a
+              style={{ textDecoration: "none", color: "black" }}
+              href="mailto: sfkonzalting@gmail.com?subject=Upit"
+            >
+              POŠALJITE UPIT
+            </a>{" "}
+          </Button>
         </Desno>
       </Wrap>
       <WrapDoli>

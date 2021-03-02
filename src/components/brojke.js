@@ -175,9 +175,14 @@ const Brojke = () => {
         ugostiteljstvo i poljoprivredu • OPG Mladen Arbanas • OPG Davor Livaić •
         Grafikart d.o.o. • FG-Grafika d.o.o. • Oskar d.o.o. • Evo trade d.o.o.
       </Partneri>
-      <Link to="/usluge" style={{ textDecoration: "none" }}>
-        <Button className="button">ZATRAŽITE KONZULTACIJE</Button>
-      </Link>
+      <Button className="button">
+        <a
+          style={{ textDecoration: "none", color: "black" }}
+          href="mailto: sfkonzalting@gmail.com?subject=Upit"
+        >
+          ZATRAŽITE KONZULTACIJE
+        </a>{" "}
+      </Button>
     </OnamaWrap>
   )
 }

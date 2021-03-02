@@ -215,9 +215,14 @@ const Objekt = ({ data }) => {
               zIndex: "1",
             }}
           ></Photo>
-          <Link to="/uslugePage" style={{ textDecoration: "none" }}>
-            <Button>POŠALJITE UPIT</Button>
-          </Link>
+          <Button className="button">
+            <a
+              style={{ textDecoration: "none", color: "black" }}
+              href="mailto: sfkonzalting@gmail.com?subject=Upit"
+            >
+              POŠALJITE UPIT
+            </a>{" "}
+          </Button>
         </Desno>
       </Wrap>
       <WrapDoli>
