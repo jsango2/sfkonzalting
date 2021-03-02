@@ -1,7 +1,8 @@
 import React, { Component } from "react"
 import mapboxgl from "mapbox-gl"
 import "./mapstyles.css"
-mapboxgl.accessToken = process.env.MAPBOX_KEY
+mapboxgl.accessToken =
+  "pk.eyJ1IjoibG92cmVwZXJhaWMiLCJhIjoiY2p1bDFnN29jMjJqbjN5cGcxbnp2d2ZtMSJ9.nooF3ezg5yH_NBrmGjKQUw"
 //test
 class MapboxFile extends Component {
   constructor(props) {
