@@ -91,11 +91,11 @@ const CMSizdvojeniCardMobLayout = props => {
           <div className="overlayGradient" />
           <WrapText>
             <div className="titleWrapIzdvojeniCard">
-              <div
+              {/* <div
                 style={{ fontWeight: "700", fontSize: "14px", color: "white" }}
               >
                 Saznaj više ➞
-              </div>
+              </div> */}
 
               <Naslov>{props.naslov}</Naslov>
             </div>

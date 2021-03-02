@@ -36,7 +36,7 @@ const KakoDoNas = styled.div`
   position: relative;
   color: white;
   width: 50%;
-  height: 90%;
+  height: 80%;
   opacity: 1;
   z-index: 3;
   padding-top: 90px;
@@ -64,7 +64,7 @@ const Kontakt = styled.div`
 `
 const SocMrezeMob = styled.div`
   position: relative;
-  bottom: 95px;
+  bottom: 135px;
   z-index: 5;
   @media only screen and (min-width: 850px) {
     ${"" /* display: none; */}

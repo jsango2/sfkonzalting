@@ -15,6 +15,7 @@ const Wrap = styled.div`
   width: 80%;
   justify-content: space-between;
   height: auto;
+  padding-bottom: 70px;
   @media only screen and (max-width: 1100px) {
     ${"" /* width: 940px;
     padding-left: 30px; */}
@@ -27,14 +28,15 @@ const Wrap = styled.div`
   @media only screen and (max-width: 570px) {
     flex-direction: column;
     width: 100%;
-    padding-left: 30px;
+    padding-left: 25px;
+    padding-bottom: 0px;
   }
 `
 
 const Lijevo = styled.div`
   ${"" /* margin: 0 auto; */}
   width: 47%;
-  padding-top: 53px;
+  padding-top: 60px;
   ${"" /* padding: 1.85rem 0; */}
   height: 100%;
   background-color: white;
@@ -50,10 +52,11 @@ const Desno = styled.div`
   width: 47%;
   ${"" /* padding: 1.85rem 0; */}
   height: 100%;
-  padding-top: 53px;
+  padding-top: 60px;
   ${"" /* display: flex;
   justify-content: space-between; */}
   @media only screen and (max-width: 570px) {
+    padding-top: 30px;
     width: 95%;
   }
 `
@@ -174,7 +177,7 @@ const Objekt = ({ data }) => {
               fontSize: "32px",
               // width: "89%",
               // marginLeft: "10px",
-              marginBottom: "15px",
+              marginBottom: "10px",
               lineHeight: "37.5px",
             }}
           >
@@ -182,19 +185,18 @@ const Objekt = ({ data }) => {
           </div>
           <div
             style={{
-              fontWeight: "300",
+              fontWeight: "400",
               color: "#A0A0A0",
-              fontSize: "16px",
-
-              marginBottom: "30px",
-              lineHeight: "37.5px",
+              fontSize: "12px",
+              lineHeight: "17.5px",
+              marginBottom: "25px",
             }}
           >
             {datum}
           </div>
           <div
             style={{
-              fontWeight: "300",
+              fontWeight: "400",
               fontSize: "14px",
               // width: "89%",
               // marginLeft: "10px",
@@ -208,6 +210,7 @@ const Objekt = ({ data }) => {
         </Lijevo>
         <Desno>
           <div
+            className="photoNovosti"
             style={{
               position: "relative",
               width: "100%",

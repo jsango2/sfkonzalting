@@ -20,7 +20,7 @@ const Text = styled.div`
   height: auto;
   text-align: center;
   font-size: 22px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 26.77px;
   margin-bottom: 40px;
 

@@ -109,6 +109,9 @@ const Paragraf = styled.div`
   line-height: 28.49px;
   margin: 170px auto 30px auto;
   color: white;
+  @media only screen and (max-width: 830px) {
+    width: 85%;
+  }
   @media only screen and (max-width: 560px) {
     font-size: 19px;
 

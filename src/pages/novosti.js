@@ -46,9 +46,11 @@ const Novosti = ({ data }) => {
       <HeroWrap>
         <div style={{ transform: "rotate(180deg)" }}>
           <div
+            className="naslovHeroNovosti"
             style={{
               fontSize: "32px",
               marginBottom: "20px",
+              lineHeight: "32px",
               textAlign: "center",
             }}
           >

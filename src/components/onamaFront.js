@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import onama from "../../content/assets/images/onama.png"
+import onama from "../../content/assets/images/onama.jpg"
 import { Link } from "gatsby"
 
 const Wrap = styled.div`

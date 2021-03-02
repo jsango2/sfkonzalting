@@ -75,7 +75,7 @@ const Button = styled.div`
   justify-content: center;
   position: relative;
   background-color: white;
-  margin: 30px auto;
+  margin: 30px auto 0 auto;
   z-index: 2;
   width: 220px;
   height: 46px;
@@ -126,7 +126,7 @@ const Hero = () => {
             position: "absolute",
             width: "100%",
             height: "100%",
-            top: "680px",
+            top: "640px",
           }}
           className="removeUnderline"
         >
@@ -136,12 +136,20 @@ const Hero = () => {
         </div>
       </HeroWrapMobile>
       <HeroWrap>
-        <Lottie animationData={lijevoLottie} loop={false} />
+        <Lottie
+          style={{ position: "relative", top: "-15px" }}
+          animationData={lijevoLottie}
+          loop={false}
+        />
         <Logo>
-          <img src={logo} alt="logo" width="100%" />
+          <img src={logo} alt="logo" width="238px" />
         </Logo>
 
-        <Lottie animationData={desnoLottie} loop={false} />
+        <Lottie
+          style={{ position: "relative", top: "-15px" }}
+          animationData={desnoLottie}
+          loop={false}
+        />
       </HeroWrap>
     </>
   )

@@ -16,17 +16,21 @@ const Pagination = ({ postsPerPage, totalPosts, paginate, currentPage }) => {
   return (
     <nav className="paginationWrap">
       <ul className="pagination">
-        {pageNumbers.map(number => (
-          <li key={number} id={number} className="page-item">
-            <Link
-              onClick={() => paginate(number)}
-              to="#"
-              className={currentPage === number ? "active" : ""}
-            >
-              {number}
-            </Link>
-          </li>
-        ))}
+        {pageNumbers.length > 1 ? (
+          pageNumbers.map(number => (
+            <li key={number} id={number} className="page-item">
+              <Link
+                onClick={() => paginate(number)}
+                to="#"
+                className={currentPage === number ? "active" : ""}
+              >
+                {number}
+              </Link>
+            </li>
+          ))
+        ) : (
+          <div></div>
+        )}
       </ul>
     </nav>
   )

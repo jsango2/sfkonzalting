@@ -1,9 +1,9 @@
 import React, { Component } from "react"
 import styled from "styled-components"
-import photo1 from "../../content/assets/images/p1.jpg"
-import photo2 from "../../content/assets/images/p2.jpg"
-import photo3 from "../../content/assets/images/p3.jpg"
-import photo4 from "../../content/assets/images/p4.jpg"
+import photo1 from "../../content/assets/images/p1.png"
+import photo2 from "../../content/assets/images/p2.png"
+import photo3 from "../../content/assets/images/p3.png"
+import photo4 from "../../content/assets/images/p4.png"
 
 const PhotoWrap = styled.div`
   width: 100%;

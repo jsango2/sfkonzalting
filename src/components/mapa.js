@@ -66,9 +66,26 @@ const Mapa = () => {
   const isScrolling = useHasBeenVisible(preload)
   return (
     <>
-      <div ref={halfPage}></div>
+      <div
+        style={{
+          position: "absolute",
+          top: "1800px",
+          height: "200px",
+          width: "100%",
+        }}
+        ref={preload}
+      ></div>
+      <div
+        style={{
+          position: "absolute",
+          height: "100%",
+          width: "100%",
+        }}
+        ref={halfPage}
+      ></div>
       {hasScrolled || isScrolling ? (
         <MapaWrap>
+          <div className="mapaPozadina">Mapa se učitava...</div>
           <MapboxFile />
         </MapaWrap>
       ) : (
@@ -120,8 +137,20 @@ const Mapa = () => {
             }}
           ></div>
           <div style={{ fontSize: "24px", marginBottom: "40px" }}>
-            +385 91 5234 932
-            <br /> sfkonzalting@gmail.com
+            <a
+              style={{ color: "black", textDecoration: "none" }}
+              href="tel: +385 (0) 91 5234 932"
+            >
+              +385 91 5234 932
+            </a>
+
+            <br />
+            <a
+              style={{ color: "black", textDecoration: "none" }}
+              href="mailto: sfkonzalting@gmail.com?subject=Upit"
+            >
+              sfkonzalting@gmail.com
+            </a>
           </div>
         </Kontakt>
       </DonjiDio>

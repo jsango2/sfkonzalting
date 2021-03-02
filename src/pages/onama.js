@@ -1,7 +1,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import styled from "styled-components"
-import onama from "../../content/assets/images/onama.png"
+import onama from "../../content/assets/images/onama.jpg"
 import ZeljkaPdf from "../../content/assets/images/CV_Zeljka_Smoljan.pdf"
 import JelenaPdf from "../../content/assets/images/CV_Jelena_Ferrelli.pdf"
 
@@ -45,6 +45,9 @@ const Desno = styled.div`
 `
 const FotoWrap = styled.div`
   height: 534px;
+  @media only screen and (max-width: 950px) {
+    height: 420px;
+  }
 
   @media only screen and (max-width: 575px) {
     height: 320px;

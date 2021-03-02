@@ -3,16 +3,30 @@ import { graphql } from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
+import Footer from "../components/footer"
 
 const NotFoundPage = ({ data, location }) => {
   const siteTitle = data.site.siteMetadata.title
 
   return (
-    <Layout location={location} title={siteTitle}>
-      <SEO title="404: Not Found" />
-      <h1>404: Not Found</h1>
-      <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-    </Layout>
+    <>
+      <Header />
+      <SEO title="404: Stranica ne postoji" />
+      <div
+        style={{
+          height: "300px",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1>404: Stranica ne postoji</h1>
+        <p>Stranica koju ste upisali ne postoji. Provjerite vaš link</p>
+      </div>
+      <Footer />
+    </>
   )
 }
 

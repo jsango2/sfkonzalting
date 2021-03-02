@@ -105,13 +105,12 @@ const CMSizdvojeniCard = props => {
           <div className="overlayGradient" />
           <WrapText>
             <div className="titleWrapIzdvojeniCard">
-              <div
-                style={{ fontWeight: "700", fontSize: "14px", color: "white" }}
-              >
-                Saznaj više ➞
-              </div>
-
               <Naslov>{props.naslov}</Naslov>
+              {/* <div
+                style={{ fontWeight: "400", fontSize: "12px", color: "grey" }}
+              >
+                HAMAG, EU fondovi
+              </div> */}
             </div>
             <Text className="textIzdvojeni">{props.uvodUprojekt}</Text>
           </WrapText>

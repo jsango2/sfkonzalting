@@ -35,6 +35,7 @@ const CardWrap = styled.div`
     margin-right: 8px;
     min-width: 90vw;
     padding-bottom: 10px;
+    ${"" /* padding-left: 5px; */}
     height: auto;
     margin-top: 10px;
     background-color: rgb(245, 245, 245);

@@ -8,7 +8,7 @@ const Wrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: 60px auto 85px auto;
+  margin: 60px auto 55px auto;
   width: 83%;
   @media only screen and (max-width: 1200px) {
     width: 100%;

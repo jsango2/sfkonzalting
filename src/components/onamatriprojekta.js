@@ -15,6 +15,7 @@ const Wrap = styled.div`
 `
 const Naslov = styled.div`
   font-size: 32px;
+  font-weight: 300;
   width: 90%;
   height: auto;
   text-align: center;

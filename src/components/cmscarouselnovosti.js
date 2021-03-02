@@ -33,7 +33,7 @@ const Wrap = styled.div`
     width: 900px;
   }
   @media only screen and (max-width: 780px) {
-    width: 620px;
+    width: 100%;
   }
 
   @media only screen and (max-width: 570px) {

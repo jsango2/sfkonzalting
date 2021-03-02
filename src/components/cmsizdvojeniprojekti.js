@@ -24,7 +24,7 @@ const Naslov = styled.div`
 `
 const WrappAll = styled.div`
   height: 500px;
-  margin-bottom: 40px;
+  ${"" /* margin-bottom: 40px;   */}
   @media only screen and (max-width: 570px) {
   }
 `
@@ -37,7 +37,7 @@ const Wrap = styled.div`
     width: 900px;
   }
   @media only screen and (max-width: 780px) {
-    width: 620px;
+    width: 100%;
   }
 
   @media only screen and (max-width: 570px) {
