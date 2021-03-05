@@ -223,6 +223,7 @@ const Testimonial = () => {
             {data.wpgraphql.wp_izjave.edges.map(testimonial => (
               <div key={testimonial.node.title} className="visibleContent">
                 <Paragraf
+                  style={{ fontStyle: "italic" }}
                   dangerouslySetInnerHTML={{
                     __html: testimonial.node.wp_gq_izjava.tekstIzjave,
                   }}

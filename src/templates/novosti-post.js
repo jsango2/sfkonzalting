@@ -192,7 +192,7 @@ const Objekt = ({ data }) => {
               marginBottom: "25px",
             }}
           >
-            {datum}
+            NOVOSTI / {datum}
           </div>
           <div
             style={{
