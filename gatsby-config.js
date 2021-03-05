@@ -11,7 +11,7 @@ module.exports = {
     },
     description: `Savjetovanja, izrada poslovnih planova, investicijskih studija, cost benefit analiza i ostale dokumentacije. Priprema za HAMAG BICRO, HBOR. EU i nacionalni projekti. Poslovno savjetovanje i izobrazba `,
     siteUrl: `https://wwww.sfkonzalting.hr`,
-    image: "../../content/assets/images/SF konz logo.svg",
+    image: "../../content/assets/images/p4.png",
     keywords:
       "Savjetovanje, Izrada poslovnih planova, Investicijske studije, cost benefit analiza, HBOR, HAMAG BICRO, EU projekti, Izobrazba, Poslovno savjetovanje",
   },
@@ -93,13 +93,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `SF Konzalting`,
+        short_name: `SF Konzalting`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `content/assets/gatsby-icon.png`,
+        icon: `content/assets/images/sflogo.png`,
       },
     },
     {
