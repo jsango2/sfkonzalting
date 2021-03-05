@@ -13,11 +13,7 @@ exports.createPages = async ({ graphql, actions }) => {
     `
       {
         projekt: wpgraphql {
-<<<<<<< HEAD
           wp_projekti(first: 12) {
-=======
-          wp_projekti(first: 12){
->>>>>>> e600ec47c1763007e260665cafbc398326daee85
             edges {
               node {
                 id
