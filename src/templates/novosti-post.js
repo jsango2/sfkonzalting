@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import { Link } from "gatsby"
-
 import SEO from "../components/seo"
 import CMSnovostiCarousel from "../components/cmscarouselnovosti"
 import Header from "../components/header"

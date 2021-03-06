@@ -109,8 +109,20 @@ const DonjiDioKontaktMob = () => {
           }}
         ></div>
         <div style={{ fontSize: "12px", marginBottom: "18px" }}>
-          +385 91 5234 932
-          <br /> sfkonzalting@gmail.com
+          <a
+            style={{ color: "white", textDecoration: "none" }}
+            href="tel: +385 (0) 91 5234 932"
+          >
+            +385 91 5234 932
+          </a>
+          <br />
+          <a
+            style={{ color: "white", textDecoration: "none" }}
+            href="tel: +385 (0) 95 900 7687"
+          >
+            +385 95 900 7687
+          </a>
+          <br /> info@sfkonzalting.hr
         </div>
       </Kontakt>
       <SocMrezeMob>

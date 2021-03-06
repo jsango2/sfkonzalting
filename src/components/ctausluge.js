@@ -48,9 +48,9 @@ const CTAusluge = () => {
   return (
     <UslugeWrap>
       <Text>
-        Pokrećemo pozitivne društvene promjene povećanjem učinkovitosti i
-        konkurentnosti naših klijenata. SF Konzalting  - Vaš Partner u <br />
-        pokretanju pozitivnih društvenih promjena
+        SF Konzalting - Vaš Partner u pokretanju pozitivnih društvenih promjena.
+        Uživamo u svom poslu, kreirajući i stvarajući s posebnom energijom koja
+        zrači promjene.
       </Text>
       <Link to="/usluge" style={{ textDecoration: "none" }}>
         <Button className="button">USLUGE KOJE NUDIMO</Button>

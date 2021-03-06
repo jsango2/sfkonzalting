@@ -109,7 +109,6 @@ const CMSizdvojeniProjekti = props => {
           infinite: true,
           lazyLoad: true,
           arrows: true,
-          infinite: true,
           speed: 500,
         },
       },

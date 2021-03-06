@@ -39,48 +39,48 @@ const SEO = ({ description, lang, meta, title }) => {
         }}
         title={title}
         titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-        // meta={[
-        //   {
-        //     name: `description`,
-        //     content: metaDescription,
-        //   },
-        //   {
-        //     property: `og:title`,
-        //     content: defaultTitle,
-        //   },
-        //   {
-        //     property: `og:description`,
-        //     content: metaDescription,
-        //   },
-        //   {
-        //     property: `og:type`,
-        //     content: `website`,
-        //   },
-        //   {
-        //     name: `twitter:card`,
-        //     content: `summary`,
-        //   },
-        //   {
-        //     name: `twitter:title`,
-        //     content: title,
-        //   },
-        //   {
-        //     name: `twitter:description`,
-        //     content: metaDescription,
-        //   },
-        //   {
-        //     property: `og:image`,
-        //     content: "https://source.unsplash.com/376KN_ISplE",
-        //   },
-        //   {
-        //     name: " twitter: image",
-        //     content: "https://source.unsplash.com/376KN_ISplE",
-        //   },
-        //   {
-        //     name: "keywords",
-        //     content: keywords,
-        //   },
-        // ].concat(meta)}
+        meta={[
+          {
+            name: `description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:title`,
+            content: defaultTitle,
+          },
+          {
+            property: `og:description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:type`,
+            content: `website`,
+          },
+          {
+            name: `twitter:card`,
+            content: `summary`,
+          },
+          {
+            name: `twitter:title`,
+            content: title,
+          },
+          {
+            name: `twitter:description`,
+            content: metaDescription,
+          },
+          {
+            property: `og:image`,
+            content: "https://source.unsplash.com/376KN_ISplE",
+          },
+          {
+            name: " twitter: image",
+            content: "https://source.unsplash.com/376KN_ISplE",
+          },
+          {
+            name: "keywords",
+            content: keywords,
+          },
+        ].concat(meta)}
       />
       <Helmet>
         {" "}

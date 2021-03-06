@@ -147,9 +147,17 @@ const Mapa = () => {
             <br />
             <a
               style={{ color: "black", textDecoration: "none" }}
-              href="mailto: sfkonzalting@gmail.com?subject=Upit"
+              href="tel: +385 (0) 95 900 7687"
             >
-              sfkonzalting@gmail.com
+              +385 95 900 7687
+            </a>
+
+            <br />
+            <a
+              style={{ color: "black", textDecoration: "none" }}
+              href="mailto: info@sfkonzalting.hr?subject=Upit"
+            >
+              info@sfkonzalting.hr
             </a>
           </div>
         </Kontakt>
