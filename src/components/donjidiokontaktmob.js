@@ -126,7 +126,7 @@ const DonjiDioKontaktMob = () => {
         </div>
       </Kontakt>
       <SocMrezeMob>
-        <a href="http://www.instagram.com">
+        <a href="https://www.instagram.com/sfkonzalting/">
           <img
             className="footerLogo insta mob"
             src={instagram}
@@ -134,7 +134,7 @@ const DonjiDioKontaktMob = () => {
             width="40px"
           />
         </a>
-        <a href="http://www.facebook.com">
+        <a href="https://web.facebook.com/SF-Konzalting-432018117547648/services/?service_id=2385723278127719&_rdc=1&_rdr">
           <img
             className="footerLogo fb mob"
             src={facebook}
@@ -142,7 +142,7 @@ const DonjiDioKontaktMob = () => {
             width="40px"
           />
         </a>
-        <a href="http://www.linkedin.com">
+        <a href="https://www.linkedin.com/in/sf-konzalting-business-consulting-services-35618a187/?originalSubdomain=hr">
           <img
             className="footerLogo ld mob"
             src={linkedin}
