@@ -109,7 +109,7 @@ const Onama = () => {
           <Naslov>O nama</Naslov>
           <Paragraf>
             Prijateljstvo koje traje duže od 30 godina okrunjeno je poslovnom
-            suradnjom baziranoj na profesionalnosti, odgovornosti, te međusobnom
+            suradnjom baziranoj na profesionalnosti, odgovornosti, međusobnom
             poštovanju i povjerenju te predstavlja ujedno i kvalitetu koju
             nudimo svim našim klijentima.
             <br />
