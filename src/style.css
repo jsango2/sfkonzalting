@@ -850,6 +850,7 @@ a:focus {
   flex-direction: column;
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
+  text-align: center;
 }
 .wrapLinksMobileHorizontal .mobileLinks {
   margin-top: 25px;
