@@ -77,7 +77,7 @@ export default Projekti
 export const query = graphql`
   query MyQuery4 {
     wpgraphql {
-      wp_projekti(first: 12) {
+      wp_projekti(first: 50) {
         edges {
           node {
             id
