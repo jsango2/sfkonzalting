@@ -19,7 +19,6 @@ const SEO = ({ description, lang, meta, title }) => {
             image
             description
             siteUrl
-            twitterImage
             title
             keywords
           }
@@ -31,7 +30,6 @@ const SEO = ({ description, lang, meta, title }) => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const keywords = site.siteMetadata?.keywords
-  const twitterImage = site.siteMetadata.twitterImage
 
   return (
     <>
@@ -72,11 +70,13 @@ const SEO = ({ description, lang, meta, title }) => {
           },
           {
             property: `og:image`,
-            content: twitterImage,
+            content:
+              "https://www.sportzone.hr/wp-content/uploads/2021/03/twitter-frame.png",
           },
           {
             name: " twitter: image",
-            content: twitterImage,
+            content:
+              "https://www.sportzone.hr/wp-content/uploads/2021/03/twitter-frame.png",
           },
           {
             name: "keywords",
