@@ -4,12 +4,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `SF Konzalting`,
+    title: `SF Konzalting - Vaš Partner u pokretanju pozitivnih društvenih promjena`,
     author: {
       name: `Sutra.hr`,
       summary: `Web Dev`,
     },
-    description: `Savjetovanja, izrada poslovnih planova, investicijskih studija, cost benefit analiza i ostale dokumentacije. Priprema za HAMAG BICRO, HBOR. EU i nacionalni projekti. Poslovno savjetovanje i izobrazba `,
+    description: `Savjetovanja, poslovni planovi, investicijske studije, cost benefit analize. Priprema za HAMAG BICRO, HBOR. EU i nacionalni projekti. Poslovno savjetovanje i izobrazba `,
     siteUrl: `https://wwww.sfkonzalting.hr`,
     image: "../../content/assets/images/p4.png",
     twitterImage: "../../content/assets/images/twitter-frame.png ",
