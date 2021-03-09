@@ -12,6 +12,7 @@ module.exports = {
     description: `Savjetovanja, izrada poslovnih planova, investicijskih studija, cost benefit analiza i ostale dokumentacije. Priprema za HAMAG BICRO, HBOR. EU i nacionalni projekti. Poslovno savjetovanje i izobrazba `,
     siteUrl: `https://wwww.sfkonzalting.hr`,
     image: "../../content/assets/images/p4.png",
+    twitterImage: "../../content/assets/images/twitter-frame.png ",
     keywords:
       "Savjetovanje, Izrada poslovnih planova, Investicijske studije, cost benefit analiza, HBOR, HAMAG BICRO, EU projekti, Izobrazba, Poslovno savjetovanje",
   },

@@ -19,6 +19,7 @@ const SEO = ({ description, lang, meta, title }) => {
             image
             description
             siteUrl
+            twitterImage
             title
             keywords
           }
@@ -30,6 +31,7 @@ const SEO = ({ description, lang, meta, title }) => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const keywords = site.siteMetadata?.keywords
+  const twitterImage = site.siteMetadata.twitterImage
 
   return (
     <>
@@ -70,11 +72,11 @@ const SEO = ({ description, lang, meta, title }) => {
           },
           {
             property: `og:image`,
-            content: "https://source.unsplash.com/376KN_ISplE",
+            content: twitterImage,
           },
           {
             name: " twitter: image",
-            content: "https://source.unsplash.com/376KN_ISplE",
+            content: twitterImage,
           },
           {
             name: "keywords",
