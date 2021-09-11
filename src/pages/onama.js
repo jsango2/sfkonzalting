@@ -172,9 +172,16 @@ const OnamaPage = ({ data, location }) => {
               ŽELJKA SMOLJAN | PDF ŽIVOTOPIS
             </a>
           </div>
-          <Link to="/uslugePage" style={{ textDecoration: "none" }}>
-            <Button className="button">POŠALJITE UPIT</Button>
-          </Link>
+
+          <Button className="button">
+            {" "}
+            <a
+              style={{ textDecoration: "none", color: "black" }}
+              href="mailto: sfkonzalting@gmail.com?subject=Upit"
+            >
+              POŠALJITE UPIT
+            </a>
+          </Button>
         </Lijevo>
         <Desno>
           <FotoWrap>

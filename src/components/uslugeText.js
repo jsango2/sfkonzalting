@@ -207,9 +207,17 @@ const UslugeText = () => {
           investicija, optimizacije poslovnih procesa), mogućnosti kreditiranja,
           EU fondove i projekte.
         </div>
-        <Link to="/uslugePage" style={{ textDecoration: "none" }}>
-          <Button className="button">POŠALJITE UPIT</Button>
-        </Link>
+        {/* <Link to="/uslugePage" style={{ textDecoration: "none" }}> */}
+        <Button className="button">
+          {" "}
+          <a
+            style={{ textDecoration: "none", color: "black" }}
+            href="mailto: sfkonzalting@gmail.com?subject=Upit"
+          >
+            POŠALJITE UPIT
+          </a>
+        </Button>
+        {/* </Link> */}
       </StupacDesno>
     </Wrap>
   )

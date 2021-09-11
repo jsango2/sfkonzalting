@@ -87,8 +87,6 @@ const Button = styled.div`
   text-decoration: none;
   margin: 0 auto;
 
-
-  }
   @media only screen and (max-width: 450px) {
     display: none;
   }
@@ -110,7 +108,7 @@ const Brojke = () => {
           >
             <div>
               {" "}
-              <span style={{ fontWeight: "700" }}>Više od 60 </span> poslovnih
+              <span style={{ fontWeight: "700" }}>Više od 100 </span> poslovnih
               planova i investicijskih studija
             </div>
           </Krug>
@@ -125,7 +123,7 @@ const Brojke = () => {
             {" "}
             <div>
               {" "}
-              <span style={{ fontWeight: "700" }}> Više od 30 </span>milijuna
+              <span style={{ fontWeight: "700" }}> Više od 40 </span>milijuna
               kuna realiziranih kredita i zajmova
             </div>
           </Krug>
@@ -143,7 +141,7 @@ const Brojke = () => {
             <div>
               {" "}
               <span style={{ fontWeight: "700" }}>
-                Više od 1 milijuna kuna{" "}
+                Više od 10 milijuna kuna{" "}
               </span>
               bespovratnih sredstava po EU projektima
             </div>

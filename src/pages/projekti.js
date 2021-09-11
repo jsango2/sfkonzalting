@@ -61,8 +61,8 @@ const Projekti = ({ data }) => {
               textAlign: "center",
             }}
           >
-            Popis svih projekata u kojima smo sudjelovali u <br /> pripremi
-            i/ili provedbi
+            Popis projekata u kojima smo sudjelovali u <br /> pripremi i/ili
+            provedbi
           </div>
         </div>
       </HeroWrap>
