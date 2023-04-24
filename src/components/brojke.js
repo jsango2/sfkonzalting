@@ -108,7 +108,7 @@ const Brojke = () => {
           >
             <div>
               {" "}
-              <span style={{ fontWeight: "700" }}>Više od 100 </span> poslovnih
+              <span style={{ fontWeight: "700" }}>Više od 200 </span> poslovnih
               planova i investicijskih studija
             </div>
           </Krug>
@@ -123,8 +123,8 @@ const Brojke = () => {
             {" "}
             <div>
               {" "}
-              <span style={{ fontWeight: "700" }}> Više od 40 </span>milijuna
-              kuna realiziranih kredita i zajmova
+              <span style={{ fontWeight: "700" }}> Više od 10 </span>milijuna
+              eura realiziranih kredita i zajmova
             </div>
           </Krug>
         </div>
@@ -141,7 +141,7 @@ const Brojke = () => {
             <div>
               {" "}
               <span style={{ fontWeight: "700" }}>
-                Više od 10 milijuna kuna{" "}
+                Više od 3 milijuna eura{" "}
               </span>
               bespovratnih sredstava po EU projektima
             </div>
@@ -158,7 +158,7 @@ const Brojke = () => {
             {" "}
             <div>
               {" "}
-              <span style={{ fontWeight: "700" }}>Više od 100 </span>zadovoljnih
+              <span style={{ fontWeight: "700" }}>Više od 200 </span>zadovoljnih
               klijenata
             </div>
           </Krug>

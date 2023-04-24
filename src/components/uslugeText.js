@@ -157,7 +157,7 @@ const UslugeText = () => {
           <br />
           <br /> U svrhu pokretanja ili razvoja poslovanja poduzetnika, obrtnika
           i obiteljskih poljoprivrednih gospodarstava, te ostvarenja kreditnih
-          sredstava, do sada smo izradili smo preko 60 poslovnih planova i
+          sredstava, do sada smo izradili smo preko 200 poslovnih planova i
           investicijskih studija čime smo poduzetnicima omogućili:
         </div>
         <div className="paragrafUsluge uvuceno">
