@@ -123,7 +123,7 @@ const Brojke = () => {
             {" "}
             <div>
               {" "}
-              <span style={{ fontWeight: "700" }}> Više od 10 </span>milijuna
+              <span style={{ fontWeight: "700" }}> Više od 20 </span>milijuna
               eura realiziranih kredita i zajmova
             </div>
           </Krug>
@@ -141,7 +141,7 @@ const Brojke = () => {
             <div>
               {" "}
               <span style={{ fontWeight: "700" }}>
-                Više od 3 milijuna eura{" "}
+                Više od 10 milijuna eura{" "}
               </span>
               bespovratnih sredstava po EU projektima
             </div>
